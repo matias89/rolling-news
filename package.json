@@ -1,0 +1,28 @@
+{
+  "name": "rollingnews",
+  "version": "1.0.0",
+  "description": "Portal de noticias",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matias89/rolling-news.git"
+  },
+  "keywords": [
+    "news",
+    "noticias",
+    "portal"
+  ],
+  "author": "Comisión 8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matias89/rolling-news/issues"
+  },
+  "homepage": "https://github.com/matias89/rolling-news#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
