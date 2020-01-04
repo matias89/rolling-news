@@ -14,7 +14,7 @@ import './main.css';
 
 const App = () => {
   return (
-    <>
+    <div id="menu">
       <Router>
         <ul>
           <li>
@@ -49,7 +49,7 @@ const App = () => {
           <Playground />
         </Route>
       </Router>
-    </>
+    </div>
   );
 };
 
