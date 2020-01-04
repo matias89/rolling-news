@@ -4,8 +4,10 @@
   "description": "Portal de noticias",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build ./src/index.html --public-url ./",
+    "server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,20 @@
     "url": "https://github.com/matias89/rolling-news/issues"
   },
   "homepage": "https://github.com/matias89/rolling-news#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "prop-types": "15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
+  },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "json-server": "^0.15.1",
     "parcel-bundler": "^1.12.4"
   }
 }
