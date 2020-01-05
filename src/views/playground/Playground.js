@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
+import Button from '../../components/button/Button';
 class Playground extends Component {
     render() {
         return (
@@ -13,6 +14,15 @@ class Playground extends Component {
                     <h4>Propiedades</h4>
                     <ul>
                         <li>testProp</li>
+                    </ul>
+                </article>
+
+                <article id="button">
+                    <h3>Button Component</h3>
+                    <Button id="1" />
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>id</li>
                     </ul>
                 </article>
 
