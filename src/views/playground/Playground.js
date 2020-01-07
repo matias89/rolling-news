@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Comment from '../../components/comment/Comment';
+
 class Playground extends Component {
     render() {
         return (
