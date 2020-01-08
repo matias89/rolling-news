@@ -26,12 +26,11 @@ class Playground extends Component {
                         <li>id</li>
                     </ul>
                 </article>
-                <article id="root">
+                <article>
                     <Clock/>
                 </article>
             </div>
         );
     }
 }
-
 export default Playground;

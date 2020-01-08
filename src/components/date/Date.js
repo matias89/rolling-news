@@ -4,8 +4,9 @@ class Clock extends Component {
     
     constructor(props) {
       super(props);
-      this.state = {date: new Date()};
-    //   this.state = {getDay:  ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'] };
+      this.state = {date: new Date()}
+      this.days =  ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+      this.months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre']  
     }  
 
     componentDidMount() {
@@ -21,25 +22,21 @@ class Clock extends Component {
   
     tick() {
       this.setState({
-        date: new Date(),
-        
-      });
-      this.setState({
-      });
+        date: new Date(),        
+      });      
     }
-
+          
     render() {
+       
       return (
         <div>             
-          <h2>Día {this.state.date.getDay()}.</h2>
-          <h2>del mes {this.state.date.getMonth()}.</h2>
-          <h2>del año {this.state.date.getFullYear()}.</h2>
-          <h2>hora {this.state.date.toLocaleTimeString()}.</h2>
+            <h5>    
+                {this.days[this.state.date.getDay()]} {this.state.date.getDate()} de {this.months[this.state.date.getMonth()]} de {this.state.date.getFullYear()} - {this.state.date.toLocaleTimeString()}
+            </h5>
         </div>
+
       );
     }
   }
   
-
-
   export default Clock;
