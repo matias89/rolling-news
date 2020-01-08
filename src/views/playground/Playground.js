@@ -55,11 +55,24 @@ class Playground extends Component {
                     <InputElement
                         value={this.state.busqueda2} 
                         label="busqueda2" 
-                        type="search" 
+                        type="text" 
                         id="busqueda2" 
                         placeholder="busqueda" 
                         handleOnChange={this.handleOnChange}
                     />
+                    <form>
+                        <div className="form-inline-group">
+                            <InputElement
+                                onLeft
+                                value={this.state.busqueda2} 
+                                label="busqueda3" 
+                                type="text" 
+                                id="busqueda3" 
+                                placeholder="busqueda" 
+                                handleOnChange={this.handleOnChange}
+                                />
+                        </div>
+                    </form>
                     <h4>Propiedades</h4>
                     <ul>
                         <li>label. Agrega un label que puede ir arriba o a la izquierda del componente</li>

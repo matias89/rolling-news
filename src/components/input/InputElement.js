@@ -1,16 +1,14 @@
 import React from 'react';
 import './styles.css';
 
-const InputElement = ({ label, type, id, placeholder, description, handleOnChange, isLeft, value }) => {
-    const myClass = 'search';
+const InputElement = ({ label, type, id, placeholder, description, handleOnChange, onLeft, value }) => {
+    const labelOnLeft = onLeft ? 'col-form-label pr-2' : '';
+    const inputInline = onLeft ? 'd-inline w-50' : '';
     return (
         <>
-            { isLeft ?
-                <label>{label}</label>
-                : <label>{label} <br /></label>
-            }
+            <label className={`${labelOnLeft}`}>{label}</label>
             <input 
-                className={`form-control ${myClass}`}
+                className={`form-control ${inputInline}`}
                 value={value}
                 type={type}
                 placeholder={placeholder}
