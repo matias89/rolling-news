@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const InputElement = ({ label, type, id, placeholder, description, handleOnChange, isLeft }) => {
+const InputElement = ({ label, type, id, placeholder, description, handleOnChange, isLeft, value }) => {
     const myClass = 'search';
     return (
         <>
@@ -11,10 +11,11 @@ const InputElement = ({ label, type, id, placeholder, description, handleOnChang
             }
             <input 
                 className={`form-control ${myClass}`}
+                value={value}
                 type={type}
                 placeholder={placeholder}
                 id={id}
-                onChange={handleOnChange}
+                onChange={event => handleOnChange(event)}
             />
             {description &&
                 <small className="form-text text-muted">{description}</small>

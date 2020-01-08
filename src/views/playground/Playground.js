@@ -4,6 +4,21 @@ import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
 class Playground extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            busqueda: '',
+            busqueda2: '',
+        }
+        this.handleOnChange = this.handleOnChange.bind(this);
+    }
+    handleOnChange(event) {
+        const { target: { value, id } } = event;
+        this.setState({
+            [id]: value
+        })
+    }
+
     render() {
         return (
             <div id="playground" className="container">
@@ -29,7 +44,22 @@ class Playground extends Component {
 
                 <article id="button">
                     <h3>Button Component</h3>
-                    <InputElement label="busqueda" type="search" id="busqueda" placeholder="busqueda" />
+                    <InputElement
+                        value={this.state.busqueda} 
+                        label="busqueda" 
+                        type="search" 
+                        id="busqueda" 
+                        placeholder="busqueda" 
+                        handleOnChange={this.handleOnChange}
+                    />
+                    <InputElement
+                        value={this.state.busqueda2} 
+                        label="busqueda2" 
+                        type="search" 
+                        id="busqueda2" 
+                        placeholder="busqueda" 
+                        handleOnChange={this.handleOnChange}
+                    />
                     <h4>Propiedades</h4>
                     <ul>
                         <li>label. Agrega un label que puede ir arriba o a la izquierda del componente</li>
