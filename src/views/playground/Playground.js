@@ -19,10 +19,33 @@ class Playground extends Component {
 
                 <article id="button">
                     <h3>Button Component</h3>
-                    <Button id="1" />
+                    <Button 
+                        id="1"
+                        text="Aceptar"
+                        type="submit"
+                        size="md"
+                        color="success" 
+                        onClick = {() => {console.log("Acpetar")}}
+                        icon=""
+                    />
+                    <Button 
+                        id="1"
+                        text="Cancelar"
+                        type="submit"
+                        size="md"
+                        color="danger" 
+                        onClick = {() => {console.log("Cancelar")}}
+                        icon=""
+                    />
                     <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>
+                        <li>text</li>
+                        <li>type</li>
+                        <li>size</li>
+                        <li>color</li>
+                        <li>onClick</li>
+                        <li>icon</li>
                     </ul>
                 </article>
 

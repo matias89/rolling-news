@@ -1,11 +1,21 @@
 import React from 'react';
-// Styles
-import './button.css';
 
-const Button = ({ id }) => {
+export default class Button extends React.Component {
+    
+  render (){
+    const { id, type, size, color, onClick, text } = this.props;
+    const myClass = `btn btn-${color} btn-${size}`;
     return (
-        <button id={id}>Click Me!</button>
-    );
-}
+        <button
+          className={myClass} 
+          id={id} 
+          type={type}
+          onClick={onClick}
+        >
+          {text}
+        </button>
 
-export default Button;
+    );
+  }
+
+}
