@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './styles.css';
 
-
-const InputElement = ({ label, type, id, placeholder, description }) => {
-    const [inputValue, setInputValue] = useState('');
-    console.log(inputValue);
-
+const InputElement = ({ label, type, id, placeholder, description, handleOnChange, isLeft }) => {
+    const myClass = 'search';
     return (
         <>
-            {
-                label &&
-                <label htmlFor={id}>{label} <br /></label>
+            { isLeft ?
+                <label>{label}</label>
+                : <label>{label} <br /></label>
             }
-                <input 
-                    className="form-control"
-                    value={inputValue} 
-                    type={type} 
-                    id={id} 
-                    placeholder={placeholder}
-                    onChange={(ev) => setInputValue(ev.target.value)} />
-                {
-                    description && 
-                    <small className="form-text text-muted">{description}</small>
-                }
+            <input 
+                className={`form-control ${myClass}`}
+                type={type}
+                placeholder={placeholder}
+                id={id}
+                onChange={handleOnChange}
+            />
+            {description &&
+                <small className="form-text text-muted">{description}</small>
+            }
         </>
     );
 };

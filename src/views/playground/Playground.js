@@ -29,7 +29,7 @@ class Playground extends Component {
 
                 <article id="button">
                     <h3>Button Component</h3>
-                    <InputElement type="text" id="busqueda" placeholder="busqueda" />
+                    <InputElement label="busqueda" type="search" id="busqueda" placeholder="busqueda" />
                     <h4>Propiedades</h4>
                     <ul>
                         <li>label</li>
@@ -37,9 +37,10 @@ class Playground extends Component {
                         <li>id</li>
                         <li>placeholder</li>
                         <li>Description</li>
+                        <li>isLeft</li>
+                        <li>handleOnChange</li>
                     </ul>
                 </article>
-
             </div>
         );
     }
