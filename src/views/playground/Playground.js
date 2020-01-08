@@ -32,13 +32,13 @@ class Playground extends Component {
                     <InputElement label="busqueda" type="search" id="busqueda" placeholder="busqueda" />
                     <h4>Propiedades</h4>
                     <ul>
-                        <li>label</li>
-                        <li>type</li>
-                        <li>id</li>
-                        <li>placeholder</li>
-                        <li>Description</li>
-                        <li>isLeft</li>
-                        <li>handleOnChange</li>
+                        <li>label. Agrega un label que puede ir arriba o a la izquierda del componente</li>
+                        <li>type. Para activar el buscador, deben colocar type="search"</li>
+                        <li>id. Añade un identificar único al input</li>
+                        <li>placeholder. Añade un placeholder</li>
+                        <li>Description. Permite agregar una descripción abajo del input.</li>
+                        <li>isLeft. Coloca el label a la izquierda del input</li>
+                        <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
             </div>
