@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Clock from '../../components/date/Date';
 class Playground extends Component {
     render() {
         return (
@@ -25,7 +26,9 @@ class Playground extends Component {
                         <li>id</li>
                     </ul>
                 </article>
-
+                <article id="root">
+                    <Clock/>
+                </article>
             </div>
         );
     }
