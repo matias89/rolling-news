@@ -2,7 +2,23 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import InputElement from '../../components/input/InputElement';
 class Playground extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            busqueda: '',
+            busqueda2: '',
+        }
+        this.handleOnChange = this.handleOnChange.bind(this);
+    }
+    handleOnChange(event) {
+        const { target: { value, id } } = event;
+        this.setState({
+            [id]: value
+        })
+    }
+
     render() {
         return (
             <div id="playground" className="container">
@@ -49,6 +65,48 @@ class Playground extends Component {
                     </ul>
                 </article>
 
+                <article id="inputElement">
+                    <h3>InputElement</h3>
+                    <InputElement
+                        value={this.state.busqueda} 
+                        label="busqueda" 
+                        type="search" 
+                        id="busqueda" 
+                        placeholder="busqueda" 
+                        handleOnChange={this.handleOnChange}
+                    />
+                    <InputElement
+                        value={this.state.busqueda2} 
+                        label="busqueda2" 
+                        type="text" 
+                        id="busqueda2" 
+                        placeholder="busqueda" 
+                        handleOnChange={this.handleOnChange}
+                    />
+                    <form>
+                        <div className="form-inline-group">
+                            <InputElement
+                                onLeft
+                                value={this.state.busqueda2} 
+                                label="busqueda3" 
+                                type="text" 
+                                id="busqueda3" 
+                                placeholder="busqueda" 
+                                handleOnChange={this.handleOnChange}
+                                />
+                        </div>
+                    </form>
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>label. Agrega un label que puede ir arriba o a la izquierda del componente</li>
+                        <li>type. Para activar el buscador, deben colocar type="search"</li>
+                        <li>id. Añade un identificar único al input</li>
+                        <li>placeholder. Añade un placeholder</li>
+                        <li>Description. Permite agregar una descripción abajo del input.</li>
+                        <li>onLeft. Coloca el label a la izquierda del input</li>
+                        <li>handleOnChange. Permite manipular el estado en los formularios.</li>
+                    </ul>
+                </article>
             </div>
         );
     }
