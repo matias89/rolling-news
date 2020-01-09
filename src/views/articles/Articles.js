@@ -7,8 +7,7 @@ class Articles extends Component {
             <div>
                 <h1>Articles</h1>
                 <Aside />
-            </div>
-            
+            </div>  
         );
     }
 }
