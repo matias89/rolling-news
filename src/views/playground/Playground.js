@@ -42,8 +42,8 @@ class Playground extends Component {
                     </ul>
                 </article>
 
-                <article id="button">
-                    <h3>Button Component</h3>
+                <article id="inputElement">
+                    <h3>InputElement</h3>
                     <InputElement
                         value={this.state.busqueda} 
                         label="busqueda" 
@@ -80,7 +80,7 @@ class Playground extends Component {
                         <li>id. Añade un identificar único al input</li>
                         <li>placeholder. Añade un placeholder</li>
                         <li>Description. Permite agregar una descripción abajo del input.</li>
-                        <li>isLeft. Coloca el label a la izquierda del input</li>
+                        <li>onLeft. Coloca el label a la izquierda del input</li>
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>

@@ -1,11 +1,6 @@
 input {
 	outline: none;
 }
-input[type=search] {
-	box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
-}
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
@@ -15,6 +10,9 @@ input::-webkit-search-cancel-button {
 input[type=search] {
 	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
 	border: solid 1px #ccc;
+	box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
 	padding: 9px 10px 9px 32px;
 	width: 10%;
 	-webkit-border-radius: 10em;
