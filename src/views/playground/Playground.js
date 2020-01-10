@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
-import Clock from '../../components/date/Date';
 import InputElement from '../../components/input/InputElement';
 class Playground extends Component {
     constructor(props) {
@@ -36,8 +35,7 @@ class Playground extends Component {
 
                 <article id="button">
                     <h3>Button Component</h3>
-                    <Button
-                        className="btn btn-success"
+                    <Button 
                         id="1"
                         text="Aceptar"
                         type="submit"
@@ -46,8 +44,7 @@ class Playground extends Component {
                         onClick = {() => {console.log("Acpetar")}}
                         icon=""
                     />
-                    <Button
-                        className="btn btn-success"
+                    <Button 
                         id="1"
                         text="Cancelar"
                         type="submit"
@@ -58,18 +55,16 @@ class Playground extends Component {
                     />
                     <h4>Propiedades</h4>
                     <ul>
-                        <li>className</li>
                         <li>id</li>
                         <li>text</li>
                         <li>type</li>
                         <li>size</li>
                         <li>color</li>
                         <li>onClick</li>
+                        <li>icon</li>
                     </ul>
                 </article>
-                <article>
-                    <Clock/>
-                </article>
+
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -116,4 +111,5 @@ class Playground extends Component {
         );
     }
 }
+
 export default Playground;
