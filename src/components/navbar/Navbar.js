@@ -1,33 +1,32 @@
 import React from 'react';
-import {NavLink, withRouter}  from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-class Navbar extends React.Component {
-    getNavLinkClass = (path) => {
-        return this.props.location.pathname === path ? 'active' : '';
-    }
-    render() {
+class Navbar extends React.component {
+    render () {
         return (
-            <nav className="navbar navbar-inverse" >
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                        <a className="navbar-brand" href="/">Al trote</a>
-                    </div>
-                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul className="nav navbar-nav navbar-right">
-                           <li className={this.getNavLinkClass("/")}><NavLink to="/" >Listar</NavLink></li>
-                           <li className={this.getNavLinkClass("/agregar")}><NavLink to="/agregar">Agregar</NavLink></li>
-                        </ul>
-                    </div>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a className="navbar-brand" href="#">Navbar</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <Link to="/page1"  className="nav-link">Page1 <span className="sr-only">(current)</span></Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/page2" className="nav-link" >Page2</Link>
+                        </li>
+                    </ul>
+                    <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </nav>
-        )
+        );
     }
 };
-Navbar = withRouter(Navbar);
+
 export default Navbar;

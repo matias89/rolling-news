@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
@@ -109,6 +111,29 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+                <h4>Navbar</h4>
+                {/* <BrowserRouter>
+                    <div>
+                        <NavBar />
+                        <Redirect
+                            from="/"
+                            to="/home" />
+                        <Switch>
+                            <Route
+                            path="/home"
+                            component={Home} />
+                            <Route
+                            exact
+                            path="/page1"
+                            render={() => <Page1 name="React Medellín" />} />
+                            <Route
+                            exact
+                            path="/page2"
+                            render={() => <Page2 />} />
+                            <Route component={PageError} />
+                        </Switch>
+                    </div>
+                </BrowserRouter> */}
             </div>
         );
     }
