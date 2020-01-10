@@ -1,0 +1,39 @@
+input {
+	outline: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+	padding: 9px 10px 9px 32px;
+	width: 10%;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 90%;
+	background-color: #fff;
+	border-color: #66CC75;
+	-webkit-box-shadow: #5BC0DE;
+	-moz-box-shadow: #5BC0DE;
+	box-shadow: #5BC0DE;
+}
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
