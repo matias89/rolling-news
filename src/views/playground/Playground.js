@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
-import Clock from '../../components/date/Date';
 import InputElement from '../../components/input/InputElement';
+import Clock from '../../components/date/Date'
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -65,9 +65,7 @@ class Playground extends Component {
                         <li>icon</li>
                     </ul>
                 </article>
-                <article>
-                    <Clock/>
-                </article>
+
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -110,8 +108,13 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+                <article id="clock"> 
+                    <h3>Clock component</h3>
+                    <Clock />
+                </article>
             </div>
         );
     }
 }
+
 export default Playground;
