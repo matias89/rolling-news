@@ -1,5 +1,8 @@
 .smithers {
-   background: blue;
-   opacity: 0,5;
-   fill-opacity: inherit;
+   position: relative;
+   display: inline-block;
+   background: cadetblue;
+   height: 100%;
+   width: 100%;
+   opacity: 0.2;
 }

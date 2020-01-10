@@ -5,6 +5,7 @@ class Articles extends Component {
         return (
             <div>
                 <h1>Articles</h1>
+                <Spinner />
             </div>
         );
     }
