@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Clock from '../../components/date/Date';
 import InputElement from '../../components/input/InputElement';
 class Playground extends Component {
     constructor(props) {
@@ -64,7 +65,9 @@ class Playground extends Component {
                         <li>icon</li>
                     </ul>
                 </article>
-
+                <article>
+                    <Clock/>
+                </article>
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -111,5 +114,4 @@ class Playground extends Component {
         );
     }
 }
-
 export default Playground;
