@@ -19,7 +19,8 @@ class Playground extends Component {
 
                 <article id="button">
                     <h3>Button Component</h3>
-                    <Button 
+                    <Button
+                        className="btn btn-success"
                         id="1"
                         text="Aceptar"
                         type="submit"
@@ -28,7 +29,8 @@ class Playground extends Component {
                         onClick = {() => {console.log("Acpetar")}}
                         icon=""
                     />
-                    <Button 
+                    <Button
+                        className="btn btn-success"
                         id="1"
                         text="Cancelar"
                         type="submit"
@@ -39,13 +41,13 @@ class Playground extends Component {
                     />
                     <h4>Propiedades</h4>
                     <ul>
+                        <li>className</li>
                         <li>id</li>
                         <li>text</li>
                         <li>type</li>
                         <li>size</li>
                         <li>color</li>
                         <li>onClick</li>
-                        <li>icon</li>
                     </ul>
                 </article>
 
