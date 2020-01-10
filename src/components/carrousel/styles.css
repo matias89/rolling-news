@@ -1,0 +1,5 @@
+.carousel-control-next, .carousel-control-prev {
+    height: 10px;
+    margin-top: 50%;
+    background: red;
+}
