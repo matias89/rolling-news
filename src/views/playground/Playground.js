@@ -7,6 +7,7 @@ import Button from '../../components/button/Button';
 import Navbar from '../../components/navbar/Navbar';
 
 import InputElement from '../../components/input/InputElement';
+import Clock from '../../components/date/Date'
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -134,6 +135,10 @@ class Playground extends Component {
                         </Switch>
                     </div>
                 </BrowserRouter> */}
+                <article id="clock"> 
+                    <h3>Clock component</h3>
+                    <Clock />
+                </article>
             </div>
         );
     }
