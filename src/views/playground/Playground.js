@@ -4,6 +4,8 @@ import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date'
+import Icon from '../../components/icon/Icon';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -108,9 +110,27 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
+                    </article>    
+
+                <article id="icon">
+                    <h3>Icon Component</h3>
+                    <h4>Propiedades</h4>
+                        <Icon
+                        name = "facebook"
+                        />
+                    <ul>
+                        <li>id</li>
+                        <li>name</li>
+                        <li>color</li>
+                        <li>size</li>
+                        <li>onClick</li>
+                        
+                    </ul>
+
                 </article>
             </div>
         );
