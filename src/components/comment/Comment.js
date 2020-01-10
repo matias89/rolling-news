@@ -12,7 +12,7 @@ class Comment extends React.Component {
     }
 
     componentDidMount() {
-        get('https://jsonplaceholder.typicode.com/comments').then(comments => {
+        get('http://localhost:3000/comments').then(comments => {
         this.setState({
             comments
           });
@@ -24,32 +24,30 @@ class Comment extends React.Component {
     buildComments() {
         
         return this.state.comments.map(comments => {
-          const { id, name, email, body } = comments;          
+          const { id, userName, email, comment } = comments;          
          
-          const CardTitle = React.createElement('h5', {className: 'card-title',  key:`cardTitle-${id}`}, name);
+          const CardTitle = React.createElement('h5', {className: 'card-title',  key:`cardTitle-${id}`}, userName);
           const CardSubtitle = React.createElement('h6', {className: 'card-titlecard-subtitle mb-2 text-muted text-right', key:`cardSubtitle-${id}`}, email);
-          const CardText = React.createElement('p', {className: 'card-text', key:`cardText-${id}`}, body);
+          const CardText = React.createElement('p', {className: 'card-text', key:`cardText-${id}`}, comment);
 		  const CardBody = React.createElement('div', {className: 'card-body'},  [CardTitle, CardSubtitle, CardText]);
           const Card = React.createElement('div', {className: 'card', key:`card-${id}` },  CardBody);
           
           return (
-            <div key={`col-${id}`} className="col">
-              {Card}               
+            <div key={`row-${id}`} className="row">
+                <div key={`col-${id}`} className="col">
+                    {Card}               
+                </div>
             </div>
           );
         });
     }
 
-    render() {        
+    render() {       
         
         return(
-            <>
-                <div className='container'>
-                    <div className="row">
-                        {this.buildComments()}
-                    </div>
-                </div>
-            </>
+            <div>
+                {this.buildComments()}
+            </div>
         );
     }
 }
