@@ -5,17 +5,16 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Icon = props => {
 const {id, name , color , size , onClick} = props;
+let icon;
+switch(name) {
+    case 'facebook':
+        icon = faFacebook;
+        break;
+}
 const iconClass = `fab-fa${color} fab-fa${size}`;
-const element = <FontAwesomeIcon icon={faCoffee} />
+ 
 return(
-    <icon
-    id={id}
-    name={name}
-    className={iconClass}
-
-    >
-    </icon>
+    <FontAwesomeIcon icon={icon} />
 );
 };
 export default Icon;
-ReactDOM.render(element, document.body)

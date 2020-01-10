@@ -112,11 +112,7 @@ class Playground extends Component {
                     <h3>Icon Component</h3>
                     <h4>Propiedades</h4>
                         <Icon
-                        id = "2"
                         name = "facebook"
-                        color = "black"
-                        size ="md"
-                        onClick= "" 
                         />
                     <ul>
                         <li>id</li>
