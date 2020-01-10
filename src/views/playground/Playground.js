@@ -110,7 +110,6 @@ class Playground extends Component {
                 </article>
                 <article id="icon">
                     <h3>Icon Component</h3>
-                    <Icon id="2" />
                     <h4>Propiedades</h4>
                         <Icon
                         id = "2"
