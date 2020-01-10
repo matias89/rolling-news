@@ -26,15 +26,13 @@ class Clock extends Component {
       });      
     }
           
-    render() {
-       
+    render() {       
       return (
         <div>             
             <h5>    
                 {this.days[this.state.date.getDay()]} {this.state.date.getDate()} de {this.months[this.state.date.getMonth()]} de {this.state.date.getFullYear()} - {this.state.date.toLocaleTimeString()}
             </h5>
         </div>
-
       );
     }
   }
