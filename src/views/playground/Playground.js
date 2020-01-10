@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Aside from '../../components/aside/Aside';
 class Playground extends Component {
     render() {
         return (
@@ -24,6 +25,25 @@ class Playground extends Component {
                     <ul>
                         <li>id</li>
                     </ul>
+                </article>
+
+                <article>
+                    <h3>Aside Component</h3>
+                    <Aside
+                        items={[
+                            {
+                                id: 1,
+                                title:'titulo1',
+                                img: 'https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg?filter=w600&filter=ds75'
+                            },
+                            {
+                                id: 2,
+                                title:'titulo2',
+                                img: 'https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg?filter=w600&filter=ds75'
+                            }
+                        ]}
+                    />
+                    <h4>Propiedades</h4>
                 </article>
 
             </div>

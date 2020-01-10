@@ -1,27 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-const Aside = ({id,title,img}) => {
-    const cardId = React.createElement('h1',{className:'' , key:`test_1_${id}`},{id});
-    const titles = React.createElement('h6', {className:'card-title', key:`test_4_${id}`}, title);
-    const imgs = React.createElement('img',{src: {img}, className: 'img-top', key:`test_3_${id}`},img);
-    const cardBody= React.createElement('div', {className:'card-body' , key:`test_2_${id}`},[titles,imgs]);
-    const card= React.createElement('div', {className: 'card', key:`test_5_${id}`}, [cardBody]);
-    const container = React.createElement('div', {className:''},[cardId,card]);
-    
+const AsideContent = ({id,title,img}) => {
+    const titles = React.createElement('h3', {className:'card-title mt-0', key: `title_1_${id}` }, title);
+    const imgs = React.createElement('img', {src: img, className: 'img-top' , key: `img_1_${id}`});
+    const cardBody= React.createElement('div', {className:'card-body', key: `body_1_${id}`},[titles,imgs]);
+    const cardId = React.createElement('h2',{className: 'col-1', key: `id_1_${id}`}, id);
+    const cardContainer = React.createElement('div', {className: 'row', key: `container_1_${id}`},[cardId,cardBody]);
+
     return(
-        <div> {container} </div>         
+        <div>{cardContainer}</div>         
     );
 };
 
+const Aside = ({items}) => {
+    return items.map(article => {
+        const { id, title, img } = article;
+        return (
+            <AsideContent
+                key={id}
+                id={id} 
+                title={title}
+                img={img}
+            />
+        );
+    });
+}
+
 Aside.defaultProps = {
-    id : 1,
-    title : 'ASIDE',
-    img : 'https://estaticos.elperiodico.com/resources/jpg/1/6/gato-1502194230861.jpg'
+    id : '',
+    title : '',
+    img : ''
 };
 
-Aside.prototype = {
-    id : PropTypes.number,
+Aside.propTypes = {
+    id : PropTypes.string,
     title : PropTypes.string,
     img : PropTypes.string
 };

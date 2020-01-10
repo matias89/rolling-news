@@ -6,7 +6,7 @@ class Articles extends Component {
         return (
             <div>
                 <h1>Articles</h1>
-                <Aside />
+                <Aside id={id} title={title} img={img} />
             </div>  
         );
     }
