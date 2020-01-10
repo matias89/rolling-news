@@ -115,8 +115,8 @@ class Playground extends Component {
                         <Icon
                         id = "2"
                         name = "facebook"
-                        color = ""
-                        size =""
+                        color = "black"
+                        size ="md"
                         onClick= "" 
                         />
                     <ul>
