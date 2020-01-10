@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import Carrousel from '../../components/carrousel/Carrousel';
+import Clock from '../../components/date/Date';
 import InputElement from '../../components/input/InputElement';
 class Playground extends Component {
     constructor(props) {
@@ -67,7 +68,27 @@ class Playground extends Component {
                 </article>
                 <article id="carrousel">
                     <h3>Test Component</h3>
-                    <Carrousel />
+                    <Carrousel
+                        items={[
+                            {
+                                imgName:'https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg',
+                                title: 'noticia principal',
+                                description: 'description de producto de pueba',
+                                onClick: console.log('Hello Word'),
+                            },{
+                                imgName:'https://upload.wikimedia.org/wikipedia/commons/f/f4/Perrito_triste.jpg',
+                                title: 'noticias mas recientes',
+                                description: 'segundo perrito de prueba',
+                                onClick: console.log('Hola mundo'),
+                            },
+                            {
+                                imgName:'https://thehappening.com/wp-content/uploads/2018/12/sombreros-perritos-7.jpg',
+                                title: 'noticias de prueba ',
+                                description: 'otro perrito de prueba',
+                                onClick: console.log('Hola mundo'),
+                            },
+                        ]}
+                    />
                     <h4>Propiedades</h4>
                     <ul>
                         <li>imgName</li>
@@ -78,6 +99,9 @@ class Playground extends Component {
                 </article>
                 
 
+                <article>
+                    <Clock/>
+                </article>
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -124,5 +148,4 @@ class Playground extends Component {
         );
     }
 }
-
 export default Playground;

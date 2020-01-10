@@ -1,30 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Carrousel extends Component {
-    render () {
-        return (
-            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg" className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg" className="d-block w-100" alt="..." />
-                    </div>
-                    <div className="carousel-item">
-                        <img src="https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg" className="d-block w-100" alt="..." />
-                    </div>
-                </div>
-                <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                </a>
-          </div>
-        );
-    }
-};
+const Carrousel = (props) => {
+    const { items } = props;
+    return (
+        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+            <div className="carousel-inner">
+                {
+                    items.map((item, index) => {
+                        const { imgName, title, description, onClick } = item;
+                        return (
+                            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                <h1>{title}</h1>
+                                <img src= {imgName} className="d-block w-100" alt="..." />
+                                <h5>{description}</h5>
+                                <button onClick= {onClick}>enviar</button>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+            <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+            </a>
+        </div>
+    );
+}
+Carrousel.defaultProps = {
+    items: []
+}
 export default Carrousel;
