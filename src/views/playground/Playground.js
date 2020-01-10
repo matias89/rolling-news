@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
+import Icon from '../../components/icon/Icon';
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -105,6 +106,19 @@ class Playground extends Component {
                         <li>Description. Permite agregar una descripción abajo del input.</li>
                         <li>onLeft. Coloca el label a la izquierda del input</li>
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
+                    </ul>
+                </article>
+                <article id="icon">
+                    <h3>Icon Component</h3>
+                    <Icon id="2" />
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>id</li>
+                        <li>name</li>
+                        <li>color</li>
+                        <li>size</li>
+                        <li>onClick</li>
+                        
                     </ul>
                 </article>
             </div>
