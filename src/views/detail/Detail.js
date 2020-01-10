@@ -5,6 +5,7 @@ class Detail extends Component {
         return (
             <div>
                 <h1>Detail</h1>
+                <Spinner />
             </div>
         );
     }
