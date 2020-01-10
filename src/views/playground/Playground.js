@@ -66,6 +66,7 @@ class Playground extends Component {
                     </ul>
                 </article>
                 <article>
+                    <h3>Date</h3>
                     <Clock/>
                 </article>
                 <article id="inputElement">
