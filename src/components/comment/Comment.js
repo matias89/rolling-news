@@ -33,7 +33,7 @@ class Comment extends React.Component {
           const Card = React.createElement('div', {className: 'card', key:`card-${id}` },  CardBody);
           
           return (
-            <div key={`row-${id}`} className="row">
+            <div key={`row-${id}`} className="row my-1">
                 <div key={`col-${id}`} className="col">
                     {Card}               
                 </div>

@@ -71,10 +71,6 @@ class Playground extends Component {
                 <article id="comment">
                     <h3>Comment Component</h3>
                     <Comment />
-                    <h4>Propiedades</h4>
-                    <ul>
-                        <li>prueba</li>
-                    </ul>
                 </article>
 
                 <article id="inputElement">
