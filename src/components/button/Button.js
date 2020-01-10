@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = (props) => {
   const { id, type, size, color, onClick, text } = props;
-  const myClass = `btn btn-${color} btn-${size}`;
+  const myClass = `btn btn-${color} btn-${size} m-1`;
   return (
     <button
       className={myClass} 

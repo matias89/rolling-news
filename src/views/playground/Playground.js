@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
+import Clock from '../../components/date/Date'
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -106,6 +107,10 @@ class Playground extends Component {
                         <li>onLeft. Coloca el label a la izquierda del input</li>
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
+                </article>
+                <article id="clock"> 
+                    <h3>Clock component</h3>
+                    <Clock />
                 </article>
             </div>
         );
