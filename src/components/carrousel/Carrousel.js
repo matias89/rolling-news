@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -9,13 +10,15 @@ const Carrousel = (props) => {
             <div className="carousel-inner">
                 {
                     items.map((item, index) => {
-                        const { imgName, title, description, onClick } = item;
+                        const { imgName, title, description, path } = item;
                         return (
                             <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                                 <h1>{title}</h1>
+                                <h3> {description} </h3>
+                                <Link to={path}>click me!</Link>
                                 <img src= {imgName} className="d-block w-100" alt="..." />
                                 <h5>{description}</h5>
-                                <button onClick= {onClick}>enviar</button>
+                                
                             </div>
                         );
                     })
