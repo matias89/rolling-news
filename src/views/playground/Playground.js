@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
-<<<<<<< HEAD
 import Aside from '../../components/aside/Aside';
-=======
 import InputElement from '../../components/input/InputElement';
-import Clock from '../../components/date/Date'
->>>>>>> 9297651f501a6b9de2ed9286630560a124dc16c1
+import Clock from '../../components/date/Date';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -83,6 +81,11 @@ class Playground extends Component {
                                 id: 2,
                                 title:'titulo2',
                                 img: 'https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg?filter=w600&filter=ds75'
+                            },
+                            {
+                               id: 3,
+                               title: 'Titulo 3',
+                               img: 'https://ichef.bbci.co.uk/news/410/cpsprodpb/8536/production/_103520143_gettyimages-908714708.jpg' 
                             }
                         ]}
                     />
