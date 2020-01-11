@@ -117,7 +117,13 @@ class Playground extends Component {
                     </ul>
                 </article>
 
-                <Card title="Hello World" />
+                <Card 
+                    title="Card Component" 
+                    subTitle="Subtitulo" 
+                    someText="Texto descriptivo de la noticia" 
+                    cardLink="Link 1" 
+                    date="11/01/2020"
+                />
 
                 <article id="clock"> 
                     <h3>Clock component</h3>
