@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
@@ -153,6 +154,15 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+
+                <Card 
+                    title="Card Component" 
+                    subTitle="Subtitulo" 
+                    someText="Texto descriptivo de la noticia" 
+                    cardLink="Link 1" 
+                    date="11/01/2020"
+                />
+
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
