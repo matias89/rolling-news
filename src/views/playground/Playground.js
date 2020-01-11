@@ -4,7 +4,9 @@ import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import Card from '../../components/card/Card';
 import Clock from '../../components/date/Date';
+import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -66,9 +68,12 @@ class Playground extends Component {
                         <li>icon</li>
                     </ul>
                 </article>
-                <article>
-                    <Clock/>
+
+                <article id="comment">
+                    <h3>Comment Component</h3>
+                    <Comment />
                 </article>
+
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -114,8 +119,13 @@ class Playground extends Component {
 
                 <Card title="Hello World" />
 
+                <article id="clock"> 
+                    <h3>Clock component</h3>
+                    <Clock />
+                </article>
             </div>
         );
     }
 }
+
 export default Playground;
