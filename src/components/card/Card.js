@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Card = ({ title, subTitle, someText, cardLink, cardLink2 }) => {
     return (
         <div>
