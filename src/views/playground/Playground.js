@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import Card from '../../components/card/Card';
-import Clock from '../../components/date/Date';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
+import Clock from '../../components/date/Date';
 
 class Playground extends Component {
     constructor(props) {
