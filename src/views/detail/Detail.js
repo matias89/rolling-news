@@ -13,7 +13,7 @@ class Detail extends Component {
         }
     }
     componentDidMount() {
-        const { match: { params: { id } } } = this.props
+        const { match: { params: { id } } } = this.props;
         get(`http://localhost:3000/articles/${id}`)
             .then(article => {
                 this.setState({
@@ -22,7 +22,7 @@ class Detail extends Component {
             });
     }
     render() {
-        const { title, copete, description } = this.state.article;
+        const { article: { title, copete, description } } = this.state;
         return (
             <div>
                 <div>
