@@ -113,7 +113,7 @@ class Playground extends Component {
                     </ul>
                 </article>
                 <h4>Navbar</h4>
-                {/* <BrowserRouter>
+                <BrowserRouter>
                     <div>
                         <NavBar />
                         <Redirect
@@ -126,7 +126,7 @@ class Playground extends Component {
                             <Route
                             exact
                             path="/page1"
-                            render={() => <Page1 name="React Medellín" />} />
+                            render={() => <Page1 name="NavBar" />} />
                             <Route
                             exact
                             path="/page2"
@@ -134,7 +134,7 @@ class Playground extends Component {
                             <Route component={PageError} />
                         </Switch>
                     </div>
-                </BrowserRouter> */}
+                </BrowserRouter>
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
