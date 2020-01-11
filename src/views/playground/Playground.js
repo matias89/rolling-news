@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
-<<<<<<< HEAD
 import Carrousel from '../../components/carrousel/Carrousel';
-=======
 import Comment from '../../components/comment/Comment';
->>>>>>> 642e8055fb4d5ec2cd78061ce902fe831ae81ae1
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date';
 
