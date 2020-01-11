@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
-import Clock from '../../components/date/Date'
+import Clock from '../../components/date/Date';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -64,6 +66,11 @@ class Playground extends Component {
                         <li>onClick</li>
                         <li>icon</li>
                     </ul>
+                </article>
+
+                <article id="comment">
+                    <h3>Comment Component</h3>
+                    <Comment />
                 </article>
 
                 <article id="inputElement">
