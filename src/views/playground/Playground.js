@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import Aside from '../../components/aside/Aside';
+import Card from '../../components/card/Card';
+import Carrousel from '../../components/carrousel/Carrousel';
+import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date';
 
@@ -66,6 +69,48 @@ class Playground extends Component {
                         <li>onClick</li>
                         <li>icon</li>
                     </ul>
+                </article>
+                <article id="carrousel">
+                    <h3>carrousel Component</h3>
+                    <Carrousel
+                        items={[
+                            {
+                                imgName:'https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg',
+                                title: 'noticia principal',
+                                description: 'description de producto de pueba',
+                                path: '/article/1',
+                            },{
+                                imgName:'https://upload.wikimedia.org/wikipedia/commons/f/f4/Perrito_triste.jpg',
+                                title: 'noticias mas recientes',
+                                description: 'segundo perrito de prueba',
+                                path: '/article/2',
+                            },
+                            {
+                                imgName:'https://thehappening.com/wp-content/uploads/2018/12/sombreros-perritos-7.jpg',
+                                title: 'noticias de prueba ',
+                                description: 'otro perrito de prueba',
+                                path: '/article/3',
+                                
+                            },
+                        ]}
+                    />
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>imgName</li>
+                        <li>title</li>
+                        <li>descriptions</li>
+                        <li>onClick</li>
+                    </ul>
+                </article>
+                
+
+                <article>
+                    <Clock/>
+                </article>
+
+                <article id="comment">
+                    <h3>Comment Component</h3>
+                    <Comment />
                 </article>
 
                 <article>
@@ -134,6 +179,15 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+
+                <Card 
+                    title="Card Component" 
+                    subTitle="Subtitulo" 
+                    someText="Texto descriptivo de la noticia" 
+                    cardLink="Link 1" 
+                    date="11/01/2020"
+                />
+
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
