@@ -7,6 +7,7 @@ import Clock from '../../components/date/Date'
 import Icon from '../../components/icon/Icon';
 import { faIndustry } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 class Playground extends Component {
     constructor(props) {
@@ -120,13 +121,10 @@ class Playground extends Component {
 
                 <article id="icon">
                     <h3>Icon Component</h3>
-                    <h4>Propiedades</h4>
-                        <Icon
-                        name = "facebook"
-                        />
-                        <FontAwesomeIcon icon = "faFacebook"
-                        />
-                        
+                    <FontAwesomeIcon icon = {faFacebook}/>
+                    <FontAwesomeIcon icon = {faTwitter}/>
+                    <FontAwesomeIcon icon = {faInstagram}/>
+                  <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>
                         <li>name</li>
