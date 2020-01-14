@@ -5,6 +5,8 @@ import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date'
 import Icon from '../../components/icon/Icon';
+import { faIndustry } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Playground extends Component {
     constructor(props) {
@@ -122,6 +124,9 @@ class Playground extends Component {
                         <Icon
                         name = "facebook"
                         />
+                        <FontAwesomeIcon icon = "faFacebook"
+                        />
+                        
                     <ul>
                         <li>id</li>
                         <li>name</li>
