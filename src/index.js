@@ -9,8 +9,6 @@ import Login from './views/login/Login';
 import Articles from './views/articles/Articles';
 import Playground from './views/playground/Playground';
 
-import Navbar from './components/navbar/Navbar';
-
 // Styles
 import './main.css';
 

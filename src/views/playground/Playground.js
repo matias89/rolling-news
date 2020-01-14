@@ -6,8 +6,10 @@ import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
 import Navbar from '../../components/navbar/Navbar';
 
+import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
-import Clock from '../../components/date/Date'
+import Clock from '../../components/date/Date';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -70,6 +72,11 @@ class Playground extends Component {
                     </ul>
                 </article>
 
+                <article id="comment">
+                    <h3>Comment Component</h3>
+                    <Comment />
+                </article>
+
                 <article id="inputElement">
                     <h3>InputElement</h3>
                     <InputElement
@@ -113,28 +120,9 @@ class Playground extends Component {
                     </ul>
                 </article>
                 <h4>Navbar</h4>
-                <BrowserRouter>
-                    <div>
-                        <NavBar />
-                        <Redirect
-                            from="/"
-                            to="/home" />
-                        <Switch>
-                            <Route
-                            path="/home"
-                            component={Home} />
-                            <Route
-                            exact
-                            path="/page1"
-                            render={() => <Page1 name="NavBar" />} />
-                            <Route
-                            exact
-                            path="/page2"
-                            render={() => <Page2 />} />
-                            <Route component={PageError} />
-                        </Switch>
+                    <div >
+                        <Navbar />
                     </div>
-                </BrowserRouter>
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
