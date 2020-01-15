@@ -31,12 +31,19 @@ class Playground extends Component {
             <div id="playground" className="container">
                 <h1>PlayGround</h1>
                 <article id="header">
-                    <h3>Header</h3>
                     <Header />
-                    <h4>Propiedades</h4>
-                    <ul>
-                        <li>header</li>
-                    </ul>
+                    <div>
+                        <h3>Header</h3>
+                        <h4>Propiedades</h4>
+                        <ul>
+                            <li>Logo</li>
+                            <li>Icon</li>
+                            <li>Nav</li>
+                            <li>Date</li>
+                            <li>Button</li>
+                            <li>Buscador</li>
+                        </ul>
+                    </div>
                 </article>
 
                 <article id="test">
