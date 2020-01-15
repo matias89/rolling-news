@@ -5,6 +5,7 @@ import Button from '../../components/button/Button';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date';
+import Header from '../../components/header/Header';
 
 class Playground extends Component {
     constructor(props) {
@@ -26,7 +27,15 @@ class Playground extends Component {
         return (
             <div id="playground" className="container">
                 <h1>PlayGround</h1>
-                
+                <article id="header">
+                    <h3>Header</h3>
+                    <Header />
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>header</li>
+                    </ul>
+                </article>
+
                 <article id="test">
                     <h3>Test Component</h3>
                     <Test testProp="Soy una propiedad" />
