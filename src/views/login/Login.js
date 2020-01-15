@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
+    constructor(props){
+        super(props)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
+    }
     render() {
         return (
             <div>
-                <form>
+                <form
+                onSubmit = {this.handleSubmit}>
                     <div classNameName="form-group">
                         <label for="exampleInputEmail1">User name</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
