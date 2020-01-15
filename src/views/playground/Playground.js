@@ -5,9 +5,6 @@ import Button from '../../components/button/Button';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date'
 import Icon from '../../components/icon/Icon';
-import { faIndustry } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 class Playground extends Component {
     constructor(props) {
@@ -121,9 +118,9 @@ class Playground extends Component {
 
                 <article id="icon">
                     <h3>Icon Component</h3>
-                    <FontAwesomeIcon icon = {faFacebook}/>
-                    <FontAwesomeIcon icon = {faTwitter}/>
-                    <FontAwesomeIcon icon = {faInstagram}/>
+                    <Icon name="facebook" size="8x" />
+                    <Icon name="twitter" size="6x" />
+                    <Icon name="instagram" size="2x" />
                   <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>
