@@ -199,9 +199,9 @@ class Playground extends Component {
 
                 <article id="icon">
                     <h3>Icon Component</h3>
-                    <Icon name="facebook" size="8x" />
-                    <Icon name="twitter" size="6x" />
-                    <Icon name="instagram" size="2x" />
+                    <Icon name="facebook" size="8x" color="#3b5998" />
+                    <Icon name="twitter" size="6x" color="#00acee"/>
+                    <Icon name="instagram" size="2x" color="#e95058"/>
                   <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>
