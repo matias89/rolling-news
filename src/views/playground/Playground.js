@@ -159,10 +159,27 @@ class Playground extends Component {
                 </article>
                 <h4>Navbar</h4>
                     <div >
-                        <Navbar />
+                        <Navbar items={ [ 
+                            {
+                                title: 'Home', 
+                                path: '/home'
+                            }, 
+                            {
+                                title: 'Articles', 
+                                path: '/articles'
+                            },
+                            {
+                                title: 'Detail', 
+                                path: '/detail'
+                            },
+                            {
+                                title: 'Login', 
+                                path: '/login'
+                            }
+                        ]} />
                     </div>
 
-                <Card 
+                 <Card 
                     title="Card Component" 
                     subTitle="Subtitulo" 
                     someText="Texto descriptivo de la noticia" 
