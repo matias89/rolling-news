@@ -5,10 +5,11 @@ import Button from '../../components/button/Button';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date';
+import Footer from '../../components/footer/Footer';
 
 class Playground extends Component {
     constructor(props) {
-        super(props)
+        super(props) 
         this.state = {
             busqueda: '',
             busqueda2: '',
@@ -118,6 +119,10 @@ class Playground extends Component {
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
+                </article>
+                <article id="footer">
+                    <h3>Footer Component</h3>
+                    <Footer />
                 </article>
             </div>
         );
