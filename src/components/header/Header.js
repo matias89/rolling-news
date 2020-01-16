@@ -8,12 +8,12 @@ class Header extends React.Component {
   render () {
     const logo = React.createElement ('img', {className:'', src:'../../images/rolling.png'})
     return (
-      <header className ="sticky-top bg-warning">
+      <header className ="header fixed-top bg-warning">
         <div>
-          {logo}
+          <img className ="imglogo" src={Logo}/>
         </div>
-        <div className="p-2 d-flex justify-content-xl-end">
-          <Date />
+        <div className="p-2 d-flex fixed-top justify-content-xl-end">
+         <Date />
         </div>
         <div className ="d-flex justify-content-xl-end">
           <Button
