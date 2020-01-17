@@ -7,7 +7,8 @@ import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
-import Clock from '../../components/date/Date';
+import Clock from '../../components/date/Date'
+import Icon from '../../components/icon/Icon';
 
 class Playground extends Component {
     constructor(props) {
@@ -180,17 +181,37 @@ class Playground extends Component {
                     </ul>
                 </article>
 
-                <Card 
-                    title="Card Component" 
-                    subTitle="Subtitulo" 
-                    someText="Texto descriptivo de la noticia" 
-                    cardLink="Link 1" 
-                    date="11/01/2020"
-                />
+                <article id="card">
+                    <h3>Card component</h3>
+                    <Card 
+                        title="Card Component" 
+                        subTitle="Subtitulo" 
+                        someText="Texto descriptivo de la noticia" 
+                        cardLink="Link 1" 
+                        date="11/01/2020"
+                    />
+                </article>
 
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
+                    </article>    
+
+                <article id="icon">
+                    <h3>Icon Component</h3>
+                    <a href="https://www.facebook.com" target="_blank"><Icon name="facebook" size="5x" color="#3b5998" /></a>
+                    <a href="https://www.twitter.com" target="_blank"><Icon name="twitter" size="4x" color="#00acee"/></a>
+                    <a href="https://www.instagram.com" target="_blank"><Icon name="instagram" size="4x" color="#e95058"/></a>
+                  <h4>Propiedades</h4>
+                    <ul>
+                        <li>id</li>
+                        <li>name</li>
+                        <li>color</li>
+                        <li>size</li>
+                        <li>onClick</li>
+                        
+                    </ul>
+
                 </article>
             </div>
         );
