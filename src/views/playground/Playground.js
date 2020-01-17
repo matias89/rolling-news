@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Navbar from '../../components/navbar/Navbar';
 import Aside from '../../components/aside/Aside';
 import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
@@ -38,7 +41,7 @@ class Playground extends Component {
                     <ul>
                         <li>testProp</li>
                     </ul>
-                </article>
+                </article> 
 
                 <article id="button">
                     <h3>Button Component</h3>
@@ -180,7 +183,38 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+                <h4>Navbar</h4>
+                    <div >
+                        <Navbar items={ [ 
+                            {
+                                title: 'Home', 
+                                path: '/home'
+                            }, 
+                            {
+                                id: 1,
+                                title: 'Articles', 
+                                path: '/articles'
+                            },
+                            {
+                                id: 2,
+                                title: 'Detail', 
+                                path: '/detail'
+                            },
+                            {
+                                id: 3,
+                                title: 'Login', 
+                                path: '/login'
+                            }
+                        ]} />
+                    </div>
 
+                 <Card 
+                    title="Card Component" 
+                    subTitle="Subtitulo" 
+                    someText="Texto descriptivo de la noticia" 
+                    cardLink="Link 1" 
+                    date="11/01/2020"
+                />
                 <article id="card">
                     <h3>Card component</h3>
                     <Card 
