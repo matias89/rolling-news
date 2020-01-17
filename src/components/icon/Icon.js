@@ -22,7 +22,9 @@ switch(name) {
             }
  
 return(
-    <FontAwesomeIcon icon={icon} size={size} color={color}/>
+    <FontAwesomeIcon icon={icon} size={size} color={color} />
     );
+    
 };
 export default Icon;
+
