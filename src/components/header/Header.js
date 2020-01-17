@@ -5,6 +5,16 @@ import Logo from '../../images/rolling.png'
 
 
 class Header extends React.Component {
+  constructor(props){
+    super(props);
+    this.Logged = this.Logged.bind(this);
+  }
+  Logged(isLoggedIn) {
+    if (isLoggedIn) {
+        return <p>Logueado</p>;
+    }
+    return <p>No está Logueado</p>;
+}
   render () {
     const logo = React.createElement ('img', {className:'', src:'../../images/rolling.png'})
     return (
@@ -30,6 +40,10 @@ class Header extends React.Component {
             size="md"
             color="danger"
           />
+        </div>
+        <div>
+          <he>Condicional</he>
+          {this.Logged(false)}
         </div>
 
     </header>
