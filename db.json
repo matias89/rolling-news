@@ -74,5 +74,19 @@
       "image":"https://img.lagaceta.com.ar/fotos/notas/2020/01/09/gobierno-confirmo-aumento-4000-para-estatales-830954-214718.jpg",
       "description": "El incremento se pagará en dos cuotas: en el sueldo de enero impactarán $3.000 y los mil restantes, en el de febrero. Lo cobrarán quienes ganen menos de $60.000 brutos."
     }
+  ],
+  "users": [
+    {
+      "userName": "Ramiro Gisone",
+      "password": "peliame"
+    },
+    {
+      "userName": "Alejandro Suarez",
+      "password": "12345"
+    },
+    {
+      "userName": "Luiz Cazullo",
+      "password": "1234"
+    }
   ]
 }      
