@@ -13,7 +13,14 @@ const Footer = () => {
         <div class="row">
             <div class="col-md-4 footer-col">
                 <h6>Contacto</h6>
-                
+                <p>General Paz N° 576, S.M. de Tucumán.
+                Tucumán. Argentina.
+                </p>
+                <br></br>
+                <p><strong>Email:</strong>contacto@rollingnews.com</p>
+                <br></br>
+                <p><strong>Telefono:</strong>0381 578-3030</p>
+                              
                 
             </div>
             <div class="col-md-4 footer-col">
@@ -43,7 +50,7 @@ const Footer = () => {
             
         </div>
     </div>
-           </div>
+    </div>
     );
 }
 
