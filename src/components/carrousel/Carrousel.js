@@ -10,13 +10,13 @@ const Carrousel = (props) => {
             <div className="carousel-inner">
                 {
                     items.map((item, index) => {
-                        const { imgName, title, description, path } = item;
+                        const { image, title, description, path } = item;
                         return (
                             <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                                 <Link to={path}>
                                     <h1>{title}</h1>
                                     <h3> {description} </h3>
-                                    <img src= {imgName} className="d-block w-100" alt="..." />
+                                    <img src= {image} className="d-block w-100" alt="..." />
                                     <h5>{description}</h5>
                                 </Link>
                             </div>
