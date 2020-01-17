@@ -17,7 +17,9 @@ class Playground extends Component {
             busqueda2: '',
         }
         this.handleOnChange = this.handleOnChange.bind(this);
+       
     }
+
     handleOnChange(event) {
         const { target: { value, id } } = event;
         this.setState({
@@ -192,6 +194,7 @@ class Playground extends Component {
                     <h3>Clock component</h3>
                     <Clock />
                 </article>
+
             </div>
         );
     }
