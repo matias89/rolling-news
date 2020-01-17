@@ -1,7 +1,8 @@
 import React from 'react';
 import Date from '../date/Date';
 import Button from '../button/Button';
-import Logo from '../../images/rolling.png'
+import Logo from '../../images/rolling.png';
+import Icon from '../icon/Icon'
 
 
 class Header extends React.Component {
@@ -24,6 +25,29 @@ class Header extends React.Component {
         </div>
         <div className="p-2 d-flex fixed-top justify-content-xl-end">
          <Date />
+        </div>
+        <div className ="d-flex justify-content-xl-end">
+          <a href="https://www.facebook.com" target="_blank">
+          <Icon
+            name="facebook" 
+            size="2x" 
+            color="#3b5998"
+          />
+          </a>
+          <a href="https://www.twitter.com" target="_blank">
+            <Icon
+              name="twitter"
+              size="2x"
+              color="#00acee"
+            />
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+          <Icon
+            name="instagram"
+            size="2x"
+            color="#e95058"
+          />
+          </a>
         </div>
         <div className ="d-flex justify-content-xl-end">
           <Button
