@@ -37,8 +37,6 @@ class Login extends Component {
                         />
                     </div>
                 </form>
-
-                
             </div>
         );
     }
