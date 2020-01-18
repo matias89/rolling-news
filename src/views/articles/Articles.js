@@ -18,8 +18,6 @@ class Articles extends Component {
         this.setState({
             articles
           });
-
-          console.log(this.state.articles);
         });
     }
 
