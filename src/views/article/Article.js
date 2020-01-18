@@ -19,10 +19,10 @@ class Article extends Component {
         });
     }
     handleOnSave(){
-
+        console.log('guardar')
     }
     handleOnCancel(){
-        
+        console.log('cancelar')
     }
     render() {
         return (
