@@ -1,22 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../components/card/style.css';
 
 
-const Card = ({ title, subTitle, someText, cardLink, date }) => {
+const Card = ({ title, subTitle, someText, cardLink, date, img }) => {
     return (
-        <div>
-            <div className="card">
+            <div className="card mb-2">
                 <div className="card-body">
                     <h5 className="card-title">{ title }</h5>
-                    <img src="https://cnet1.cbsistatic.com/img/jerqdm92TwXKKfPjnNpO0gIK5VE=/868x488/2019/08/14/71b1ffaf-a502-42c4-94d5-2bb3da0444fe/samsung-galaxy-a20-1.jpg" className="card-img-top" className="img-fluid"/>
+                    <img src={img} className="card-img-top" className="img-fluid"/>
                     <h6 className="card-subtitle mb-2 text-muted subtitle"> { subTitle } </h6>
                     <p className="card-text">{ someText }</p>
-                    <a href="#" className="card-link">{ cardLink }</a>
-                    <a href="#" className="card-link">{ date }</a>
-                    
+                    <div className="d-flex justify-content-between">
+                        <div>
+                          <Link className="card-link" to={cardLink}>Ver más</Link>
+                        </div>
+                        <div>
+                        <p className="card-text text-right"><small>{ date }</small></p>
+                        </div>
+                    </div>                                      
                 </div>
             </div>
-        </div>
     );
 }
 
