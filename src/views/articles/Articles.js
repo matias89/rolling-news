@@ -7,10 +7,12 @@ class Articles extends Component {
     render() {
         return (
             <div>
-                <h1>Articles</h1>
-                <Article/>
-                
-            </div>  
+                <div>
+                    <h1>Articles</h1>
+                    <Article/>                
+                </div>  
+                <Aside id={id} title={title} img={img} />
+            </div>
         );
     }
 }

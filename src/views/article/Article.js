@@ -12,11 +12,10 @@ class Article extends Component {
                 
                         <InputElement label="Copete"/>
                 
-                        <InputElement label="Cuerpo" $inputInline="textarea" />
+                        <textarea label ="Cuerpo"></textarea>
             </div>
         );
     }
-
 }
 
 export default Article;
