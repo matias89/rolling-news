@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Spinner from '../../components/spinner/Spinner';
 
 import { get, post } from '../../utils/services';
 
@@ -11,6 +12,7 @@ class Home extends Component {
         return (
             <div>
                 <h1>Home</h1>
+                <Spinner />
             </div>
         );
     }
