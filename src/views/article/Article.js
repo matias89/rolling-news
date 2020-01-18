@@ -7,6 +7,8 @@ class Article extends Component {
     constructor(props){
         super(props);
         this.handleOnAdd = this.handleOnAdd.bind(this);
+        this.handleOnSave = this.handleOnSave.bind(this);
+        this.handleOnCancel = this.handleOnCancel.bind(this);
         this.state = {
             imgItems: []
         }
@@ -16,8 +18,13 @@ class Article extends Component {
             imgItems: [...this.state.imgItems, {}]
         });
     }
+    handleOnSave(){
+
+    }
+    handleOnCancel(){
+        
+    }
     render() {
-        console.log(this.state.imgItems);
         return (
             <div>
                 <h4>Titulo 1</h4>
@@ -45,7 +52,7 @@ class Article extends Component {
                         type="submit"
                         size="md"
                         color="primary" 
-                        onClick = {this.handleOnSubmit}
+                        onClick = {this.handleOnSave}
                         icon=""
                     />
                      <Button 
@@ -54,7 +61,7 @@ class Article extends Component {
                         type="submit"
                         size="md"
                         color="danger" 
-                        onClick = {this.handleOnSubmit}
+                        onClick = {this.handleOnCancel}
                         icon=""
                     />
                 </div>
