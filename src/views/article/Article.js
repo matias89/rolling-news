@@ -8,11 +8,16 @@ class Article extends Component {
     render() {
         return (
             <div className="container">
-                        <InputElement label="Título"/>
+                <InputElement label="Título"/>
+                <br/>
+                <InputElement label="Copete"/>
+                <br/>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Cuerpo</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+                </div>
                 
-                        <InputElement label="Copete"/>
-                
-                        <textarea label ="Cuerpo"></textarea>
+                            
             </div>
         );
     }
