@@ -3,26 +3,43 @@ import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
 
 class Login extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            password: '',
+            userName: '',
+        }
+        this.handleOnChange = this.handleOnChange.bind(this);
+    }
+    handleOnChange(event) {
+        const { target: { value, id } } = event;
+        this.setState({
+            [id]: value
+
+        })
+    }
     render() {
         return (
             <div>
                 <form>                   
                     <div className="form-group">
                         <InputElement
+                            value={this.state.userName}
                             label="User"
                             placeholder="UserName" 
                             type="text" 
-                            id="user"
-                            onLeft
+                            id="userName"
+                            handleOnChange={this.handleOnChange}
                         />      
                     </div>
                     <div className="form-group">
                         <InputElement
+                            value={this.state.password}
                             label="Password"
                             placeholder="Password" 
-                            type="text" 
+                            type="password" 
                             id="password"
-                            onLeft
+                            handleOnChange={this.handleOnChange}
                         />      
                     </div>
                     <div className="form-group form-check">
@@ -33,7 +50,6 @@ class Login extends Component {
                             size="md"
                             color="primary" 
                             onClick = {() => {console.log("Login")}}
-                            icon=""
                         />
                     </div>
                 </form>
