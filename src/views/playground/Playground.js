@@ -247,14 +247,10 @@ class Playground extends Component {
                     </ul>
 
                 </article>
-<<<<<<< HEAD
                 <article id="footer">
                     <h3>Footer Component</h3>
                     <Footer />
                 </article>
-=======
-
->>>>>>> 58b0632c8d15ebb66aa947c677d42da59c131a1e
             </div>
         );
     }
