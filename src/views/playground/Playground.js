@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 // Components
 import Test from '../../components/test/Test';
 import Button from '../../components/button/Button';
+import Navbar from '../../components/navbar/Navbar';
+import Aside from '../../components/aside/Aside';
+import Card from '../../components/card/Card';
+import Carrousel from '../../components/carrousel/Carrousel';
+import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
 import Clock from '../../components/date/Date'
+import Icon from '../../components/icon/Icon';
+
 class Playground extends Component {
     constructor(props) {
         super(props)
@@ -32,7 +41,7 @@ class Playground extends Component {
                     <ul>
                         <li>testProp</li>
                     </ul>
-                </article>
+                </article> 
 
                 <article id="button">
                     <h3>Button Component</h3>
@@ -64,6 +73,72 @@ class Playground extends Component {
                         <li>onClick</li>
                         <li>icon</li>
                     </ul>
+                </article>
+                <article id="carrousel">
+                    <h3>carrousel Component</h3>
+                    <Carrousel
+                        items={[
+                            {
+                                imgName:'https://img.over-blog-kiwi.com/2/36/16/91/20171027/ob_d8e2b5_cuidados-en-el-primer-mes-de-vida-de-u.jpg',
+                                title: 'noticia principal',
+                                description: 'description de producto de pueba',
+                                path: '/article/1',
+                            },{
+                                imgName:'https://upload.wikimedia.org/wikipedia/commons/f/f4/Perrito_triste.jpg',
+                                title: 'noticias mas recientes',
+                                description: 'segundo perrito de prueba',
+                                path: '/article/2',
+                            },
+                            {
+                                imgName:'https://thehappening.com/wp-content/uploads/2018/12/sombreros-perritos-7.jpg',
+                                title: 'noticias de prueba ',
+                                description: 'otro perrito de prueba',
+                                path: '/article/3',
+                                
+                            },
+                        ]}
+                    />
+                    <h4>Propiedades</h4>
+                    <ul>
+                        <li>imgName</li>
+                        <li>title</li>
+                        <li>descriptions</li>
+                        <li>onClick</li>
+                    </ul>
+                </article>
+                
+
+                <article>
+                    <Clock/>
+                </article>
+
+                <article id="comment">
+                    <h3>Comment Component</h3>
+                    <Comment />
+                </article>
+
+                <article>
+                    <h3>Aside Component</h3>
+                    <Aside
+                        items={[
+                            {
+                                id: 1,
+                                title:'titulo1',
+                                img: 'https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg?filter=w600&filter=ds75'
+                            },
+                            {
+                                id: 2,
+                                title:'titulo2',
+                                img: 'https://www.hola.com/imagenes/estar-bien/20180831128704/ronroneo-gatos-causas/0-595-638/gato-ronroneo-1-t.jpg?filter=w600&filter=ds75'
+                            },
+                            {
+                               id: 3,
+                               title: 'Titulo 3',
+                               img: 'https://ichef.bbci.co.uk/news/410/cpsprodpb/8536/production/_103520143_gettyimages-908714708.jpg' 
+                            }
+                        ]}
+                    />
+                    <h4>Propiedades</h4>
                 </article>
 
                 <article id="inputElement">
@@ -108,9 +183,71 @@ class Playground extends Component {
                         <li>handleOnChange. Permite manipular el estado en los formularios.</li>
                     </ul>
                 </article>
+                <h4>Navbar</h4>
+                    <div >
+                        <Navbar items={ [ 
+                            {
+                                title: 'Home', 
+                                path: '/home'
+                            }, 
+                            {
+                                id: 1,
+                                title: 'Articles', 
+                                path: '/articles'
+                            },
+                            {
+                                id: 2,
+                                title: 'Detail', 
+                                path: '/detail'
+                            },
+                            {
+                                id: 3,
+                                title: 'Login', 
+                                path: '/login'
+                            }
+                        ]} />
+                    </div>
+
+                 <Card 
+                    title="Card Component" 
+                    subTitle="Subtitulo" 
+                    someText="Texto descriptivo de la noticia" 
+                    cardLink="Link 1" 
+                    date="11/01/2020"
+                />
+                <article id="card">
+                    <h3>Card component</h3>
+                    <Card 
+                        title="Card Component" 
+                        subTitle="Subtitulo" 
+                        someText="Texto descriptivo de la noticia" 
+                        cardLink="Link 1" 
+                        date="11/01/2020"
+                    />
+                </article>
+
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
+                    </article>    
+
+                <article id="icon">
+                    <h3>Icon Component</h3>
+                    <a href="https://www.facebook.com" target="_blank"><Icon name="facebook" size="5x" color="#3b5998" /></a>
+                    <a href="https://www.twitter.com" target="_blank"><Icon name="twitter" size="4x" color="#00acee"/></a>
+                    <a href="https://www.instagram.com" target="_blank"><Icon name="instagram" size="4x" color="#e95058"/></a>
+                    <a href="https://www.whatsapp.com" target="_blank"><Icon name="whatsapp" size="4x" color="green"/></a>
+                    <a href="rollingnews@gmail.com" target="_blank"><Icon name="email" size="4x" color="#3b5998"/></a>
+                  <h4>Propiedades</h4>
+                    <ul>
+                        <li>id</li>
+                        <li>name</li>
+                        <li>color</li>
+                        <li>size</li>
+                        <li>onClick</li>
+                        
+                    </ul>
+
                 </article>
             </div>
         );
