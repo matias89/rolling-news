@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import InputElement from '../../components/input/InputElement';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Aside from '../../components/aside/Aside';
 import Card from '../../components/card/Card';
-=======
-import Spinner from '../../components/spinner/Spinner';
-
->>>>>>> 6953b263a659e450d9dac0ee4d431ae00911b274
 import { get, post } from '../../utils/services';
 
 class Home extends Component {
@@ -145,7 +140,6 @@ class Home extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
             <div className='container'>
                 <div className='row'>
                     <div className='col-10 mx-auto'>
@@ -178,11 +172,6 @@ class Home extends Component {
                         </div>                        
                     </div>
                 </div>              
-=======
-            <div>
-                <h1>Home</h1>
-                <Spinner />
->>>>>>> 6953b263a659e450d9dac0ee4d431ae00911b274
             </div>
         );
     }
