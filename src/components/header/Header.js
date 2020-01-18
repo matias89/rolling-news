@@ -3,25 +3,42 @@ import Date from '../date/Date';
 import Button from '../button/Button';
 import Logo from '../../images/rolling.png';
 import Icon from '../icon/Icon'
+import Nav from '../navbar/Navbar'
+import Navbar from '../navbar/Navbar';
 
 
 class Header extends React.Component {
-  constructor(props){
-    super(props);
-    this.Logged = this.Logged.bind(this);
-  }
-  Logged(isLoggedIn) {
-    if (isLoggedIn) {
-        return <p>Logueado</p>;
-    }
-    return <p>No está Logueado</p>;
-}
   render () {
     const logo = React.createElement ('img', {className:'', src:'../../images/rolling.png'})
     return (
-      <header className ="header fixed-top bg-warning">
+      <header className ="fixed-top bg-dark">
         <div>
           <img className ="imglogo" src={Logo}/>
+        </div>
+        <div className ="justify-content-xl-start">
+          <Navbar
+            items={ [ 
+              {
+                  title: 'Home', 
+                  path: '/home'
+              }, 
+              {
+                  id: 1,
+                  title: 'Articles', 
+                  path: '/articles'
+              },
+              {
+                  id: 2,
+                  title: 'Detail', 
+                  path: '/detail'
+              },
+              {
+                  id: 3,
+                  title: 'Login', 
+                  path: '/login'
+              }
+          ]}
+          />
         </div>
         <div className="p-2 d-flex fixed-top justify-content-xl-end">
          <Date />
@@ -64,10 +81,6 @@ class Header extends React.Component {
             size="md"
             color="danger"
           />
-        </div>
-        <div>
-          <he>Condicional</he>
-          {this.Logged(false)}
         </div>
 
     </header>
