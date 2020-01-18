@@ -14,10 +14,15 @@ class Home extends Component {
             articlesCarrousel:[],
             articlesAside:[],
             articlesCardPrimary:[],
-            articlesCardSecondary:[]
+            articlesCardSecondary:[],
+            index:0
           };
         this.BuildCardsPrimary= this.BuildCardsPrimary.bind(this);
         this.BuildCardsSecondary= this.BuildCardsSecondary.bind(this);
+        this.timerID = setInterval(
+            () => this.changeAside(),
+            2000
+          );
     }
 
     componentDidMount() {
@@ -35,9 +40,18 @@ class Home extends Component {
             articles.forEach((article, id) => {
                 articles[id].path = '/article/'+article.id;
             });
+
+            let indexAside;
+
+            if (articles.length-2 > this.state.index){
+                indexAside = this.state.index + 2;
+            } else {
+                this.setState({index: 0});
+                indexAside = 2;
+            }
             
             const articlesCarrousel = articles.slice(0,2);
-            const articlesAside = articles.slice(2, 4);
+            const articlesAside = articles.slice(this.state.index, indexAside);
             const articlesCardPrimary = articles.slice(4, 5);
             const articlesCardSecondary = articles.slice(5, 9);
 
@@ -48,7 +62,6 @@ class Home extends Component {
                 articlesCardPrimary,
                 articlesCardSecondary
             });
-            console.log(this.state.articlesCarrousel);
         });
     }
 
@@ -87,6 +100,44 @@ class Home extends Component {
           });
     }
 
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    changeAside() {
+        get('http://localhost:3000/articles').then(articles => {
+            articles.sort((a,b) => { 
+                if (a.id > b.id) {
+                    return -1;
+                } else if (a,id < b.id) {
+                    return 1;
+                } else {
+                    return 0;
+                }                
+            });
+
+            articles.forEach((article, id) => {
+                articles[id].path = '/article/'+article.id;
+            });
+
+            let indexAside;
+
+            if (articles.length-2 > this.state.index){
+                indexAside = this.state.index + 2;
+            } else {
+                this.setState({index: 0});
+                indexAside = 2;
+            }
+
+            const articlesAside = articles.slice(this.state.index, indexAside);
+            
+            this.setState({
+                articlesAside,
+                index: indexAside
+            });
+        });
+    }
+
     render() {
         return (
             <div className='container'>
@@ -100,7 +151,7 @@ class Home extends Component {
                     </div>                    
                 </div>
                 <div className='row mb-2'>
-                    <div className='col col-lg-8'>
+                    <div className='col-12 col-lg-8'>
                         <Carrousel
                             items={this.state.articlesCarrousel}
                         />
