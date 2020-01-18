@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
 
@@ -65,12 +67,19 @@ class Article extends Component {
                         icon=""
                     />
                 </div>
-
+           
+               
+                 <div className="container">
+                    <InputElement label="Título"/>
             
-            </div>
-        );
-    }
+                    <InputElement label="Copete"/>
+            
+                    <textarea label ="Cuerpo"></textarea>                 
+                </div>
+               
+            
 
+    }
 }
 
 export default Article;
