@@ -17,7 +17,6 @@ class Comment extends React.Component {
             comments
           });
 
-          console.log(this.state.comments);
         });
     }
 

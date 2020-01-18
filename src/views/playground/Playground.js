@@ -209,14 +209,7 @@ class Playground extends Component {
                             }
                         ]} />
                     </div>
-
-                 <Card 
-                    title="Card Component" 
-                    subTitle="Subtitulo" 
-                    someText="Texto descriptivo de la noticia" 
-                    cardLink="Link 1" 
-                    date="11/01/2020"
-                />
+                    
                 <article id="card">
                     <h3>Card component</h3>
                     <Card 
@@ -225,6 +218,7 @@ class Playground extends Component {
                         someText="Texto descriptivo de la noticia" 
                         cardLink="Link 1" 
                         date="11/01/2020"
+                        img="https://cnet1.cbsistatic.com/img/jerqdm92TwXKKfPjnNpO0gIK5VE=/868x488/2019/08/14/71b1ffaf-a502-42c4-94d5-2bb3da0444fe/samsung-galaxy-a20-1.jpg"
                     />
                 </article>
 

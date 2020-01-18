@@ -48,20 +48,22 @@ class Home extends Component {
                 articlesCardPrimary,
                 articlesCardSecondary
             });
+            console.log(this.state.articlesCarrousel);
         });
     }
 
     BuildCardsPrimary() {
         return this.state.articlesCardPrimary.map(articleCard => {
 
-            const { id, title, copete, description, path, date } = articleCard;          
+            const { id, title, copete, description, path, date, image } = articleCard;          
             return (
                 <Card  key ={id}
                     title={title} 
                     subTitle={copete}
-                    someText={description}
+                    someText={description.substring(0,100)+'...'}
                     cardLink={path}
                     date={date}
+                    img={image}
                 />
             );
           });
@@ -70,15 +72,15 @@ class Home extends Component {
     BuildCardsSecondary() {
         return this.state.articlesCardSecondary.map(articleCard => {
 
-            const { id, title, copete, description, path, date } = articleCard;          
+            const { id, title, copete, description, path, date, image } = articleCard;          
             return (
-                <div className='col-6' key ={id}>
+                <div className='col-12 col-md-6 col-lg-6' key ={id}>
                     <Card 
                         title={title} 
                         subTitle={copete}
-                        someText={description}
                         cardLink={path}
                         date={date}
+                        img={image}
                     />
                 </div>
             );
@@ -97,23 +99,23 @@ class Home extends Component {
                         />
                     </div>                    
                 </div>
-                <div className='row'>
-                    <div className='col-8'>
+                <div className='row mb-2'>
+                    <div className='col col-lg-8'>
                         <Carrousel
                             items={this.state.articlesCarrousel}
                         />
                     </div>
-                    <div className='col-4'>
+                    <div className='col-4 d-none d-lg-block'>
                     <Aside
                         items={this.state.articlesAside}
                     />
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-6'>
+                    <div className='col-12 col-md-6 d-none d-lg-block'>
                         {this.BuildCardsPrimary()}
                     </div>
-                    <div className='col-6'>
+                    <div className='col-12 col-lg-6'>
                         <div className='row'>
                             {this.BuildCardsSecondary()}  
                         </div>                        
