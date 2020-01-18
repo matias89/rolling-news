@@ -232,6 +232,8 @@ class Playground extends Component {
                     <a href="https://www.facebook.com" target="_blank"><Icon name="facebook" size="5x" color="#3b5998" /></a>
                     <a href="https://www.twitter.com" target="_blank"><Icon name="twitter" size="4x" color="#00acee"/></a>
                     <a href="https://www.instagram.com" target="_blank"><Icon name="instagram" size="4x" color="#e95058"/></a>
+                    <a href="https://www.whatsapp.com" target="_blank"><Icon name="whatsapp" size="4x" color="green"/></a>
+                    <a href="rollingnews@gmail.com" target="_blank"><Icon name="email" size="4x" color="#3b5998"/></a>
                   <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>

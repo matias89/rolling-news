@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { faTwitter, faFacebook , faInstagram} from '@fortawesome/free-brands-svg-icons'
+import { fas, faMailBulk, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faFacebook , faInstagram , faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 const Icon = props => {
 const {id, name , color , size , onClick} = props;
@@ -19,6 +19,12 @@ switch(name) {
      case 'instagram':
        icon = faInstagram;
         break;
+    case 'whatsapp':
+        icon =faWhatsapp;
+        break;
+    case 'email':
+        icon= faEnvelope;
+        break
             }
  
 return(
