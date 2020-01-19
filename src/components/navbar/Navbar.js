@@ -5,7 +5,7 @@ class Navbar extends React.Component {
     render () {
         const { items } = this.props;
         return (
-            <nav className="navbar navbar-expand-lg bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         {items.map(item => {
