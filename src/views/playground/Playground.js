@@ -10,18 +10,22 @@ import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
+
 import Clock from '../../components/date/Date'
 import Icon from '../../components/icon/Icon';
+import Footer from '../../components/footer/Footer';
 
 class Playground extends Component {
     constructor(props) {
-        super(props)
+        super(props) 
         this.state = {
             busqueda: '',
             busqueda2: '',
         }
         this.handleOnChange = this.handleOnChange.bind(this);
+       
     }
+
     handleOnChange(event) {
         const { target: { value, id } } = event;
         this.setState({
@@ -208,14 +212,7 @@ class Playground extends Component {
                             }
                         ]} />
                     </div>
-
-                 <Card 
-                    title="Card Component" 
-                    subTitle="Subtitulo" 
-                    someText="Texto descriptivo de la noticia" 
-                    cardLink="Link 1" 
-                    date="11/01/2020"
-                />
+                    
                 <article id="card">
                     <h3>Card component</h3>
                     <Card 
@@ -224,6 +221,7 @@ class Playground extends Component {
                         someText="Texto descriptivo de la noticia" 
                         cardLink="Link 1" 
                         date="11/01/2020"
+                        img="https://cnet1.cbsistatic.com/img/jerqdm92TwXKKfPjnNpO0gIK5VE=/868x488/2019/08/14/71b1ffaf-a502-42c4-94d5-2bb3da0444fe/samsung-galaxy-a20-1.jpg"
                     />
                 </article>
 
@@ -238,7 +236,7 @@ class Playground extends Component {
                     <a href="https://www.twitter.com" target="_blank"><Icon name="twitter" size="4x" color="#00acee"/></a>
                     <a href="https://www.instagram.com" target="_blank"><Icon name="instagram" size="4x" color="#e95058"/></a>
                     <a href="https://www.whatsapp.com" target="_blank"><Icon name="whatsapp" size="4x" color="green"/></a>
-                    <a href="rollingnews@gmail.com" target="_blank"><Icon name="email" size="4x" color="#3b5998"/></a>
+                    <a href="mailto:rollingnews@gmail.com"><Icon name="email" size="4x" color="#3b5998"/></a>
                   <h4>Propiedades</h4>
                     <ul>
                         <li>id</li>
@@ -249,6 +247,10 @@ class Playground extends Component {
                         
                     </ul>
 
+                </article>
+                <article id="footer">
+                    <h3>Footer Component</h3>
+                    <Footer />
                 </article>
             </div>
         );
