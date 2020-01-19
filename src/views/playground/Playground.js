@@ -11,7 +11,8 @@ import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
 
-import Clock from '../../components/date/Date'
+import Clock from '../../components/date/Date';
+import Article from '../article/Article';
 import Icon from '../../components/icon/Icon';
 import Footer from '../../components/footer/Footer';
 
@@ -109,14 +110,7 @@ class Playground extends Component {
                         <li>descriptions</li>
                         <li>onClick</li>
                     </ul>
-                </article>
-                
-
-                <article>
-                    <h3>Date</h3>
-                    <Clock/>
-                </article>
-
+                </article>              
                 <article id="comment">
                     <h3>Comment Component</h3>
                     <Comment />
@@ -228,8 +222,11 @@ class Playground extends Component {
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
-                    </article>    
-
+                </article> 
+                <article>
+                    <h3>Article</h3>
+                    <Article />
+                </article>
                 <article id="icon">
                     <h3>Icon Component</h3>
                     <a href="https://www.facebook.com" target="_blank"><Icon name="facebook" size="5x" color="#3b5998" /></a>
