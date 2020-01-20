@@ -10,8 +10,9 @@ import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
-
-import Clock from '../../components/date/Date'
+import Header from '../../components/header/Header';
+import Clock from '../../components/date/Date';
+import Article from '../article/Article';
 import Icon from '../../components/icon/Icon';
 import Footer from '../../components/footer/Footer';
 
@@ -37,7 +38,22 @@ class Playground extends Component {
         return (
             <div id="playground" className="container">
                 <h1>PlayGround</h1>
-                
+                <article id="header">
+                    <Header />
+                    <div>
+                        <h3>Header</h3>
+                        <h4>Propiedades</h4>
+                        <ul>
+                            <li>Logo</li>
+                            <li>Icon</li>
+                            <li>Nav</li>
+                            <li>Date</li>
+                            <li>Button</li>
+                            <li>Buscador</li>
+                        </ul>
+                    </div>
+                </article>
+
                 <article id="test">
                     <h3>Test Component</h3>
                     <Test testProp="Soy una propiedad" />
@@ -109,13 +125,7 @@ class Playground extends Component {
                         <li>descriptions</li>
                         <li>onClick</li>
                     </ul>
-                </article>
-                
-
-                <article>
-                    <Clock/>
-                </article>
-
+                </article>              
                 <article id="comment">
                     <h3>Comment Component</h3>
                     <Comment />
@@ -227,8 +237,11 @@ class Playground extends Component {
                 <article id="clock"> 
                     <h3>Clock component</h3>
                     <Clock />
-                    </article>    
-
+                </article> 
+                <article>
+                    <h3>Article</h3>
+                    <Article />
+                </article>
                 <article id="icon">
                     <h3>Icon Component</h3>
                     <a href="https://www.facebook.com" target="_blank"><Icon name="facebook" size="5x" color="#3b5998" /></a>
