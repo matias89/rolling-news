@@ -10,7 +10,7 @@ import Card from '../../components/card/Card';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Comment from '../../components/comment/Comment';
 import InputElement from '../../components/input/InputElement';
-
+import Header from '../../components/header/Header';
 import Clock from '../../components/date/Date'
 import Icon from '../../components/icon/Icon';
 import Footer from '../../components/footer/Footer';
@@ -37,7 +37,22 @@ class Playground extends Component {
         return (
             <div id="playground" className="container">
                 <h1>PlayGround</h1>
-                
+                <article id="header">
+                    <Header />
+                    <div>
+                        <h3>Header</h3>
+                        <h4>Propiedades</h4>
+                        <ul>
+                            <li>Logo</li>
+                            <li>Icon</li>
+                            <li>Nav</li>
+                            <li>Date</li>
+                            <li>Button</li>
+                            <li>Buscador</li>
+                        </ul>
+                    </div>
+                </article>
+
                 <article id="test">
                     <h3>Test Component</h3>
                     <Test testProp="Soy una propiedad" />
