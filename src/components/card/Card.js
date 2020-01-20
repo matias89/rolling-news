@@ -9,14 +9,14 @@ const Card = ({ title, subTitle, someText, cardLink, date, img }) => {
                 <div className="card-body">
                     <h5 className="card-title">{ title }</h5>
                     <img src={img} className="card-img-top" className="img-fluid"/>
-                    <h6 className="card-subtitle mb-2 text-muted subtitle"> { subTitle } </h6>
+                    <p>{ subTitle }</p>
                     <p className="card-text">{ someText }</p>
                     <div className="d-flex justify-content-between">
                         <div>
                           <Link className="card-link" to={cardLink}>Ver más</Link>
                         </div>
                         <div>
-                        <p className="card-text text-right"><small>{ date }</small></p>
+                        <p className="card-text text-right"><small>{date}</small></p>
                         </div>
                     </div>                                      
                 </div>

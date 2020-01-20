@@ -52,8 +52,8 @@ class Home extends Component {
             
             const articlesCarrousel = articles.slice(0,2);
             const articlesAside = articles.slice(this.state.index, indexAside);
-            const articlesCardPrimary = articles.slice(4, 5);
-            const articlesCardSecondary = articles.slice(5, 9);
+            const articlesCardPrimary = articles.slice(4, 6);
+            const articlesCardSecondary = articles.slice(6);
 
             this.setState({
                 articles,
@@ -70,14 +70,15 @@ class Home extends Component {
 
             const { id, title, copete, description, path, date, image } = articleCard;          
             return (
-                <Card  key ={id}
-                    title={title} 
-                    subTitle={copete}
-                    someText={description.substring(0,100)+'...'}
-                    cardLink={path}
-                    date={date}
-                    img={image}
-                />
+                <div key={id} className="col-12 col-md-6 d-none d-lg-block">
+                    <Card
+                        title={title} 
+                        subTitle={copete}
+                        cardLink={path}
+                        date={date}
+                        img={image}
+                    />
+                </div>
             );
           });
     }
@@ -85,12 +86,13 @@ class Home extends Component {
     BuildCardsSecondary() {
         return this.state.articlesCardSecondary.map(articleCard => {
 
-            const { id, title, copete, description, path, date, image } = articleCard;          
+            const { id, title, copete, description, path, date, image } = articleCard;
+            const subtitle = copete.substr(0, 100) + (copete.length > 100 ? '...' : '');
             return (
-                <div className='col-12 col-md-6 col-lg-6' key ={id}>
+                <div className='col-12 col-md-3 col-lg-3' key={id}>
                     <Card 
                         title={title} 
-                        subTitle={copete}
+                        subTitle={subtitle}
                         cardLink={path}
                         date={date}
                         img={image}
@@ -141,15 +143,13 @@ class Home extends Component {
     render() {
         return (
             <div className='container'>
-                <div className='row'>
-                    <div className='col-10 mx-auto'>
-                        <InputElement                    
-                            type="search" 
-                            id="busqueda" 
-                            placeholder="busqueda" 
-                        />
-                    </div>                    
-                </div>
+                <hr />
+                <InputElement                    
+                    type="search" 
+                    id="busqueda" 
+                    placeholder="busqueda" 
+                />
+                <hr />
                 <div className='row mb-2'>
                     <div className='col-12 col-lg-8'>
                         <Carrousel
@@ -163,14 +163,10 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-12 col-md-6 d-none d-lg-block'>
-                        {this.BuildCardsPrimary()}
-                    </div>
-                    <div className='col-12 col-lg-6'>
-                        <div className='row'>
-                            {this.BuildCardsSecondary()}  
-                        </div>                        
-                    </div>
+                    {this.BuildCardsPrimary()}
+                </div>
+                <div className="row">
+                    {this.BuildCardsSecondary()}
                 </div>              
             </div>
         );

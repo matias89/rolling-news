@@ -7,13 +7,14 @@ const InputElement = ({ label, type, id, placeholder, description, handleOnChang
     return (
         <>
             <label className={`${labelOnLeft}`}>{label}</label>
-            <input 
+            <input
                 className={`form-control ${inputInline}`}
                 value={value}
                 type={type}
                 placeholder={placeholder}
                 id={id}
                 onChange={event => handleOnChange(event)}
+                required
             />
             {description &&
                 <small className="form-text text-muted">{description}</small>
