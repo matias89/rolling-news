@@ -5,3 +5,9 @@
     background: #C7C9C9;
     border-radius: 150rem;
 }
+
+.imgCarrousel{
+    background-color: rgb(255, 254, 254);
+    width: auto;
+    height: 500px;
+}
