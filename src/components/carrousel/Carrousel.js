@@ -16,7 +16,7 @@ const Carrousel = (props) => {
                                 <Link className="text-decoration-none text-body" to={path}>
                                     <h1>{title}</h1>
                                     <p>{copete}</p>
-                                    <img src= {image} className="d-block w-100" alt="..." />
+                                    <img src= {image} className="d-block imgCarrousel" alt="..." />
                                     {allowDescription ? <p class="small">{description}</p> : null}
                                 </Link>
                             </div>
