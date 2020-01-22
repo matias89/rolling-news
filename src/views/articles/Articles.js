@@ -33,7 +33,6 @@ class Articles extends Component {
 
     render() {
         return (
-            <>
                 <div className='container'>
                     <h1>Articles</h1>                
                     {this.buildArticleItem()}
@@ -45,7 +44,6 @@ class Articles extends Component {
                             onClick = {() => {console.log("Agregar")}}/>
                     </div>
                 </div>
-            </>
         );
     }
 }

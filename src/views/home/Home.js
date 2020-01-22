@@ -90,7 +90,6 @@ class Home extends Component {
             const { id, title, copete, description, path, date, image } = articleCard;
             const subtitle = copete.substr(0, 100) + (copete.length > 100 ? '...' : '');
             return (
-                <>
                     <div className='col-12 col-md-3 col-lg-3' key={id}>
                         <Card 
                             title={title} 
@@ -100,7 +99,6 @@ class Home extends Component {
                             img={image}
                         />
                     </div>
-                </>
             );
           });
     }
@@ -145,7 +143,6 @@ class Home extends Component {
 
     render() {
         return (
-            <>
                 <div className='container'>
                     <hr />
                     <InputElement                    
@@ -173,7 +170,6 @@ class Home extends Component {
                         {this.BuildCardsSecondary()}
                     </div>              
                 </div>
-            </>
         );
     }
 }
