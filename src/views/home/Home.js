@@ -147,33 +147,33 @@ class Home extends Component {
 
     render() {
         return (
-                <div className='container'>
-                    <hr />
-                    <InputElement                    
-                        type="search" 
-                        id="busqueda" 
-                        placeholder="busqueda" 
-                    />
-                    <hr />
-                    <div className='row mb-2'>
-                        <div className='col-12 col-lg-8'>
-                            <Carrousel
-                                items={this.state.articlesCarrousel}
-                            />
-                        </div>
-                        <div className='col-4 d-none d-lg-block'>
-                        <Aside
-                            items={this.state.articlesAside}
+            <div className='container'>
+                <hr />
+                <InputElement                    
+                    type="search" 
+                    id="busqueda" 
+                    placeholder="busqueda" 
+                />
+                <hr />
+                <div className='row mb-2'>
+                    <div className='col-12 col-lg-8'>
+                        <Carrousel
+                            items={this.state.articlesCarrousel}
                         />
-                        </div>
                     </div>
-                    <div className='row'>
-                        {this.BuildCardsPrimary()}
+                    <div className='col-4 d-none d-lg-block'>
+                    <Aside
+                        items={this.state.articlesAside}
+                    />
                     </div>
-                    <div className="row">
-                        {this.BuildCardsSecondary()}
-                    </div>              
                 </div>
+                <div className='row'>
+                    {this.BuildCardsPrimary()}
+                </div>
+                <div className="row">
+                    {this.BuildCardsSecondary()}
+                </div>              
+            </div>
         );
     }
 }

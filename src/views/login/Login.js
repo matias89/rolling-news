@@ -31,39 +31,39 @@ class Login extends Component {
     }
     render() {
         return (
-                <div>
-                    <form onSubmit={this.handleOnSubmit}>                   
-                        <div className="form-group">
-                            <InputElement
-                                value={this.state.userName}
-                                label="User"
-                                placeholder="UserName"                                                                                                                                                                                                                                                                                                                                                                                              
-                                type="text"                                                                                                                                                                                                                                                                                                                                                                                         
-                                id="userName"
-                                handleOnChange={this.handleOnChange}
-                            />      
-                        </div>
-                        <div className="form-group">
-                            <InputElement
-                                value={this.state.password}
-                                label="Password"
-                                placeholder="Password"                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                type="password" 
-                                id="password"
-                                handleOnChange={this.handleOnChange}
-                            />      
-                        </div>
-                        <div className="form-group form-check">
-                            <Button
-                                id="1"
-                                text="Login"
-                                type="submit"
-                                size="md"
-                                color="primary"
-                            />
-                        </div>
-                    </form>
-                </div>
+            <div>
+                <form onSubmit={this.handleOnSubmit}>                   
+                    <div className="form-group">
+                        <InputElement
+                            value={this.state.userName}
+                            label="User"
+                            placeholder="UserName"                                                                                                                                                                                                                                                                                                                                                                                              
+                            type="text"                                                                                                                                                                                                                                                                                                                                                                                         
+                            id="userName"
+                            handleOnChange={this.handleOnChange}
+                        />      
+                    </div>
+                    <div className="form-group">
+                        <InputElement
+                            value={this.state.password}
+                            label="Password"
+                            placeholder="Password"                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                            type="password" 
+                            id="password"
+                            handleOnChange={this.handleOnChange}
+                        />      
+                    </div>
+                    <div className="form-group form-check">
+                        <Button
+                            id="1"
+                            text="Login"
+                            type="submit"
+                            size="md"
+                            color="primary"
+                        />
+                    </div>
+                </form>
+            </div>
         );
     }
 }

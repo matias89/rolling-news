@@ -33,17 +33,17 @@ class Articles extends Component {
 
     render() {
         return (
-                <div className='container'>
-                    <h1>Articles</h1>                
-                    {this.buildArticleItem()}
-                    <div className="text-right fixed-bottom">
-                        <Button 
-                            text="Agregar"
-                            type="button"
-                            color="primary" 
-                            onClick = {() => {console.log("Agregar")}}/>
-                    </div>
+            <div className='container'>
+                <h1>Articles</h1>                
+                {this.buildArticleItem()}
+                <div className="text-right fixed-bottom">
+                    <Button 
+                        text="Agregar"
+                        type="button"
+                        color="primary" 
+                        onClick = {() => {console.log("Agregar")}}/>
                 </div>
+            </div>
         );
     }
 }
