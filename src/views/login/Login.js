@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
 import { get } from '../../utils/services';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Login extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleOnSubmit}>                   
+                <form className="container " onSubmit={this.handleOnSubmit}>                   
                     <div className="form-group">
                         <InputElement
                             value={this.state.userName}
@@ -53,7 +54,7 @@ class Login extends Component {
                             handleOnChange={this.handleOnChange}
                         />      
                     </div>
-                    <div className="form-group form-check">
+                    <div className="btn btn-primary btn-sm">
                         <Button
                             id="1"
                             text="Login"
@@ -61,6 +62,15 @@ class Login extends Component {
                             size="md"
                             color="primary"
                         />
+                    </div>
+                    <div className="btn btn-danger btn-md m-1">
+                        <Link 
+                            className="btn btn-danger btn-md m-1" 
+                            to="./home"
+                            >Cancelar
+                        </Link>
+                         
+                    
                     </div>
                 </form>
             </div>

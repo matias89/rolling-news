@@ -6,7 +6,7 @@ const InputElement = ({ label, type, id, placeholder, description, handleOnChang
     const inputInline = onLeft ? 'd-inline w-50' : '';
     return (
         <>
-            <label className={`${labelOnLeft}`}>{label}</label>
+            <label className={`${labelOnLeft} formGroupExampleInput`}>{label}</label>
             <input
                 className={`form-control ${inputInline}`}
                 value={value}
