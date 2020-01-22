@@ -67,7 +67,5 @@ class Login extends Component {
         );
     }
 }
-$('.message a').click(function(){
-    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
- });
+
 export default Login;
