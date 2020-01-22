@@ -1,5 +1,5 @@
 import React, { Component, createElement } from 'react';
-import ArticleItem from '../../components/ArticleItem/ArticleItem';
+import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
 import { get } from '../../utils/services';
 
@@ -33,18 +33,19 @@ class Articles extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <h1>Articles</h1>                
-                {this.buildArticleItem()}
-                <div className="text-right fixed-bottom">
-                    <Button 
-                        text="Agregar"
-                        type="button"
-                        color="primary" 
-                        onClick = {() => {console.log("Agregar")}}/>
+            <>
+                <div className='container'>
+                    <h1>Articles</h1>                
+                    {this.buildArticleItem()}
+                    <div className="text-right fixed-bottom">
+                        <Button 
+                            text="Agregar"
+                            type="button"
+                            color="primary" 
+                            onClick = {() => {console.log("Agregar")}}/>
+                    </div>
                 </div>
-               
-            </div>
+            </>
         );
     }
 }
