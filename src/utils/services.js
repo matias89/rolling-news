@@ -1,3 +1,5 @@
+import { getItem, setItem } from './storage';
+
 const get = (url) => {
     return window.fetch(url)
         .then(response => response.json());
@@ -11,4 +13,13 @@ const post = (url, data) => {
         .then(response => response.json());
 };
 
-export { get, post };
+const isLogged = () => {
+    return getItem('userConnected');
+}
+
+const createConection = userName => {
+    setItem('userConnected', true);
+    setItem('userName', userName);
+}
+
+export { createConection, isLogged, get, post };
