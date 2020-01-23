@@ -1,5 +1,5 @@
 import React, { Component, createElement } from 'react';
-import ArticleItem from '../../components/ArticleItem/ArticleItem';
+import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
 import { get } from '../../utils/services';
 
@@ -43,7 +43,6 @@ class Articles extends Component {
                         color="primary" 
                         onClick = {() => {console.log("Agregar")}}/>
                 </div>
-               
             </div>
         );
     }
