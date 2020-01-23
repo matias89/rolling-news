@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
-import ArticleItem from '../../components/ArticleItem/ArticleItem';
+import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
 import { isLogged, get } from '../../utils/services';
 
@@ -48,7 +48,6 @@ class Articles extends Component {
                         color="primary" 
                         onClick = {() => {console.log("Agregar")}}/>
                 </div>
-               
             </div>
         );
     }

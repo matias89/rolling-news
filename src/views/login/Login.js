@@ -52,8 +52,8 @@ class Login extends Component {
                         <InputElement
                             value={this.state.userName}
                             label="User"
-                            placeholder="UserName" 
-                            type="text" 
+                            placeholder="UserName"                                                                                                                                                                                                                                                                                                                                                                                              
+                            type="text"                                                                                                                                                                                                                                                                                                                                                                                         
                             id="userName"
                             handleOnChange={this.handleOnChange}
                         />      
@@ -62,7 +62,7 @@ class Login extends Component {
                         <InputElement
                             value={this.state.password}
                             label="Password"
-                            placeholder="Password" 
+                            placeholder="Password"                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
                             type="password" 
                             id="password"
                             handleOnChange={this.handleOnChange}

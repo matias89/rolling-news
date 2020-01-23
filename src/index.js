@@ -12,11 +12,13 @@ import Footer from './components/footer/Footer';
 
 // Styles
 import './main.css';
+import Header from './components/header/Header';
 
 const App = () => {
   return (
     <>
       <Router>
+        <Header />
         <Route path="/" exact>
           <Home />
         </Route>
