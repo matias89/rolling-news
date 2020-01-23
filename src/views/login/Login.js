@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
-<<<<<<< HEAD
-import { get } from '../../utils/services';
-import '../login/login.css';
-=======
 import { get, createConection } from '../../utils/services';
->>>>>>> 15caac3e71c629d2197a4f626ed476b97b2940cb
 
 class Login extends Component {
     constructor(props) {
