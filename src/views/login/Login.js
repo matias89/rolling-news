@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
+<<<<<<< HEAD
 import { get } from '../../utils/services';
 import '../login/login.css';
+=======
+import { get, createConection } from '../../utils/services';
+>>>>>>> 15caac3e71c629d2197a4f626ed476b97b2940cb
 
 class Login extends Component {
     constructor(props) {
@@ -27,7 +32,21 @@ class Login extends Component {
         if (userName === '' || password === '') {
             alert('Los datos de acceso son requeridos');
         } else {
-            get('http://localhost:3000/users');
+            let connected = false;
+            get('http://localhost:3000/users')
+                .then(response => {
+                    for (let i in response) {
+                        if (response[i].userName === userName && response[i].password === password) {
+                            connected = true;
+                        }
+                    }
+                    if (connected) {
+                        createConection(userName);
+                        this.props.history.push('/articles');
+                    } else {
+                        window.alert('Los datos de conexión son incorrectos.');
+                    }
+                });
         }
     }
     render() {
@@ -70,4 +89,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

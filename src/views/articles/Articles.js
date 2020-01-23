@@ -1,7 +1,8 @@
-import React, { Component, createElement } from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
-import { get } from '../../utils/services';
+import { isLogged, get } from '../../utils/services';
 
 class Articles extends Component {
     
@@ -14,11 +15,15 @@ class Articles extends Component {
     }
 
     componentDidMount() {
-        get('http://localhost:3000/articles').then(articles => {
-        this.setState({
-            articles
-          });
-        });
+        if (!isLogged()) {
+            this.props.history.push('/');
+        } else {
+            get('http://localhost:3000/articles').then(articles => {
+                this.setState({
+                    articles
+                });
+            });
+        }
     }
 
     buildArticleItem() {
@@ -49,4 +54,4 @@ class Articles extends Component {
 }
 
 
-export default Articles;
+export default withRouter(Articles);
