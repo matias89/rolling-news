@@ -46,8 +46,8 @@ class Login extends Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleOnSubmit}>                   
+            <div className= "login-page rounded border">
+                <form className="register-form" onSubmit={this.handleOnSubmit}>                    
                     <div className="form-group">
                         <InputElement
                             value={this.state.userName}
@@ -68,15 +68,16 @@ class Login extends Component {
                             handleOnChange={this.handleOnChange}
                         />      
                     </div>
-                    <div className="form-group form-check">
-                        <Button
-                            id="1"
-                            text="Login"
-                            type="submit"
-                            size="md"
-                            color="primary"
-                        />
-                    </div>
+                    <div className="button-center">
+                    <Button
+                        id="1"
+                        text="Login"
+                        type="submit"
+                        size="md"
+                        color="primary"
+                    />
+                    <p className="message">Not registered? <a href="#">Create an account</a></p>
+                    </div>    
                 </form>
             </div>
         );
