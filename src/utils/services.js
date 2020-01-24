@@ -8,7 +8,21 @@ const get = (url) => {
 const post = (url, data) => {
     return window.fetch(url, {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => response.json());
+};
+
+const put = (url, data) => {
+    return window.fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
         .then(response => response.json());
 };
@@ -22,4 +36,4 @@ const createConection = userName => {
     setItem('userName', userName);
 }
 
-export { createConection, isLogged, get, post };
+export { createConection, isLogged, get, post, put };

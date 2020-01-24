@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
-import { post } from '../../utils/services';
+import { get, post, put } from '../../utils/services';
 
 
 
@@ -9,9 +10,30 @@ class Article extends Component {
     constructor(props){
         super(props);
         this.handleOnAdd = this.handleOnAdd.bind(this);
-        this.handleOnSave = this.handleOnSubmit.bind(this);      
+        this.handleOnSubmit = this.handleOnSubmit.bind(this);  
+        this.handleOnChange = this.handleOnChange.bind(this);    
         this.state = {
-            imgItems: []
+            imgItems: [],
+            title: '',
+            copete: '',
+            description: ''
+        }
+    }
+    componentDidMount() {
+        const { match: { params: { id } } } = this.props;
+        if (id) {
+            // Edition
+            get(`http://localhost:3000/articles/${id}`)
+            .then(article => {
+                const { title, copete, description } = article;
+                this.setState({
+                    title,
+                    copete,
+                    description
+                });
+            });
+        } else {
+            // New
         }
     }
     handleOnAdd(){
@@ -19,33 +41,68 @@ class Article extends Component {
             imgItems: [...this.state.imgItems, {}]
         });
     }
+    handleOnChange(event) {
+        const { target: { id, value }} = event;
+        this.setState({
+            [id]: value
+        });
+    }
     handleOnSubmit(){
-        post('http://localhost:3000/articles', 
-         {            
-            "title": "Vienen por Almendra y Boca va por Pol Fernandez ",
-            "date": "07 de Enero - 15:59",
-            "copete": "El pase de Agustín Almendra (foto) es un tema recurrente en el mundo Boca. Siempre se dijo que su destino está en Europa, pero ayer se conoció un interés firme de Inter (Miami) por el volante. La franquicia de la MLS que capitanea David Beckham está dispuesta a pagar 10 millones de dólares.",
-            "image": "https://img.lagaceta.com.ar/fotos/notas/2020/01/08/vienen-almendra-van-pol-fernandez-830894-230218.jpg",
-            "description": "En el rubro contrataciones se habla de un interés por la “repatriación” de Guillermo Pol Fernández, actualmente en México. Es un jugador que le gusta a Riquelme. Racing también está interesado en el jugador, cuya ficha pertenece a Cruz Azul. Todavía no hay definición en cuanto al interés de Boca por Edwin Cardona, ya que según el representante del colombiano recibieron varias ofertas."
-          }
-        
-        ).then(post=>{
-            
-        })
-        
+        const { match: { params: { id } } } = this.props;
+        const { title, copete, description } = this.state;
+        if (title !== '' && description !== '' && copete !== '') {
+            const payload = {
+                title,
+                date: (new Date()).toLocaleDateString(),
+                copete,
+                image: "https://img.lagaceta.com.ar/fotos/notas/2020/01/08/vienen-almendra-van-pol-fernandez-830894-230218.jpg",
+                description
+            };
+            if (id) {
+                put(`http://localhost:3000/articles/${id}`, payload).then(() => {
+                    window.alert('El articulo se ha editado correctamente.'); 
+                })
+            } else {
+                post('http://localhost:3000/articles', payload).then(() => {
+                window.alert('El articulo se ha cargado correctamente.');
+                    this.setState({
+                        title: '',
+                        copete: '',
+                        description: '',
+                        imgItems: []
+                    });
+                })
+            }
+        } else {
+            alert('Todos los datos del formulario son obligatorios');
+        }
     }
    
     render() {
+        const { title, copete, description } = this.state;
         return (
             <div className="container">
-                <InputElement label="Título" id="titulo"/>
+                <InputElement
+                    label="Título"
+                    id="title"
+                    value={title}
+                    handleOnChange={this.handleOnChange}
+                />
                 <br/>
-                <InputElement label="Copete" id="copete" />
+                <InputElement
+                    label="Copete"
+                    id="copete"
+                    value={copete}
+                    handleOnChange={this.handleOnChange}
+                />
                 <br/>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Cuerpo</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
-                </div>
+                <InputElement
+                    label="Cuerpo"
+                    id="description"
+                    value={description}
+                    type="textarea"
+                    handleOnChange={this.handleOnChange}
+                />
                 <div>
                     <label>Imagen</label>
                     <Button 
@@ -55,18 +112,16 @@ class Article extends Component {
                          size="md"
                          color="success" 
                          onClick={this.handleOnAdd}
-                         icon=""
                     />
                 </div>          
                 <section>
-                    {this.state.imgItems.map(item => {
+                    {this.state.imgItems.map((item, index) => {
                         return (
-                            <InputElement id="imagen"/>
+                            <InputElement id={`img_${index}`} key={`img_${index}`} />
                         );
                     })}
                 </section>
                 <div className="mt-3">
-                
                     <Button 
                         id="1"
                         text="Guardar"
@@ -76,7 +131,6 @@ class Article extends Component {
                         onClick = {this.handleOnSubmit}
                         icon=""
                     />
-                    
                     <Button
                     id="2"
                     text="Cancelar"
@@ -91,10 +145,9 @@ class Article extends Component {
                         }                        
                     }                    
                     />
-                    
                 </div>
              </div>  
         )}
 }
 
-export default Article;
+export default withRouter(Article);

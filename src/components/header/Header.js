@@ -82,23 +82,24 @@ class Header extends React.Component {
               <Navbar
                 items={[ 
                   {
-                      title: 'Home', 
-                      path: '/home'
+                    id: 0,
+                    title: 'Home', 
+                    path: '/home'
                   }, 
                   {
-                      id: 1,
-                      title: 'Articles', 
-                      path: '/articles'
+                    id: 1,
+                    title: 'Articles', 
+                    path: '/articles'
                   },
                   {
-                      id: 2,
-                      title: 'Detail', 
-                      path: '/detail'
+                    id: 2,
+                    title: 'Detail', 
+                    path: '/detail'
                   },
                   {
-                      id: 3,
-                      title: 'Login', 
-                      path: '/login'
+                    id: 3,
+                    title: 'Login', 
+                    path: '/login'
                   }
               ]}
               />

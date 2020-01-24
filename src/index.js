@@ -9,6 +9,7 @@ import Login from './views/login/Login';
 import Articles from './views/articles/Articles';
 import Playground from './views/playground/Playground';
 import Footer from './components/footer/Footer';
+import Article from './views/article/Article';
 
 // Styles
 import './main.css';
@@ -30,6 +31,12 @@ const App = () => {
         </Route>
         <Route path="/articles">
           <Articles />
+        </Route>
+        <Route path="/article" exact>
+          <Article />
+        </Route>
+        <Route path="/article/:id" exact>
+          <Article />
         </Route>
         <Route path="/playground">
           <Playground />
