@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React, { Component, createElement } from 'react';
-=======
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
->>>>>>> 9ecf608c1f1aa559d30c267277e7ec473f147279
 import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
 import { isLogged, get } from '../../utils/services';
