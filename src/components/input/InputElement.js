@@ -13,11 +13,6 @@ const InputElement = ({
 }) => {
     const labelOnLeft = onLeft ? 'col-form-label pr-2' : '';
     const inputInline = onLeft ? 'd-inline w-50' : '';
-<<<<<<< HEAD
-    return (
-        <>
-            <label className={`${labelOnLeft} formGroupExampleInput`}>{label}</label>
-=======
     let element;
     const props = {
         className: `form-control ${inputInline}`,
@@ -32,7 +27,6 @@ const InputElement = ({
         );
     } else {
         element = (
->>>>>>> 9ecf608c1f1aa559d30c267277e7ec473f147279
             <input
                 type={type}
                 {...props}
