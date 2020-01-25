@@ -69,8 +69,6 @@ class Login extends Component {
                             to="./home"
                             >Cancelar
                         </Link>
-                         
-                    
                     </div>
                 </form>
             </div>
