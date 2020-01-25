@@ -1,16 +1,39 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import InputElement from '../../components/input/InputElement';
 import Button from '../../components/button/Button';
+import { get, post, put } from '../../utils/services';
+
 
 
 class Article extends Component {
     constructor(props){
         super(props);
         this.handleOnAdd = this.handleOnAdd.bind(this);
-        this.handleOnSave = this.handleOnSave.bind(this);
-        this.handleOnCancel = this.handleOnCancel.bind(this);
+        this.handleOnSubmit = this.handleOnSubmit.bind(this);  
+        this.handleOnChange = this.handleOnChange.bind(this);    
         this.state = {
-            imgItems: []
+            imgItems: [],
+            title: '',
+            copete: '',
+            description: ''
+        }
+    }
+    componentDidMount() {
+        const { match: { params: { id } } } = this.props;
+        if (id) {
+            // Edition
+            get(`http://localhost:3000/articles/${id}`)
+            .then(article => {
+                const { title, copete, description } = article;
+                this.setState({
+                    title,
+                    copete,
+                    description
+                });
+            });
+        } else {
+            // New
         }
     }
     handleOnAdd(){
@@ -18,23 +41,68 @@ class Article extends Component {
             imgItems: [...this.state.imgItems, {}]
         });
     }
-    handleOnSave(){
-        
+    handleOnChange(event) {
+        const { target: { id, value }} = event;
+        this.setState({
+            [id]: value
+        });
     }
-    handleOnCancel(){
-        
+    handleOnSubmit(){
+        const { match: { params: { id } } } = this.props;
+        const { title, copete, description } = this.state;
+        if (title !== '' && description !== '' && copete !== '') {
+            const payload = {
+                title,
+                date: (new Date()).toLocaleDateString(),
+                copete,
+                image: "https://img.lagaceta.com.ar/fotos/notas/2020/01/08/vienen-almendra-van-pol-fernandez-830894-230218.jpg",
+                description
+            };
+            if (id) {
+                put(`http://localhost:3000/articles/${id}`, payload).then(() => {
+                    window.alert('El articulo se ha editado correctamente.'); 
+                })
+            } else {
+                post('http://localhost:3000/articles', payload).then(() => {
+                window.alert('El articulo se ha cargado correctamente.');
+                    this.setState({
+                        title: '',
+                        copete: '',
+                        description: '',
+                        imgItems: []
+                    });
+                })
+            }
+        } else {
+            alert('Todos los datos del formulario son obligatorios');
+        }
     }
+   
     render() {
+        const { title, copete, description } = this.state;
         return (
             <div className="container">
-                <InputElement label="Título"/>
+                <InputElement
+                    label="Título"
+                    id="title"
+                    value={title}
+                    handleOnChange={this.handleOnChange}
+                />
                 <br/>
-                <InputElement label="Copete"/>
+                <InputElement
+                    label="Copete"
+                    id="copete"
+                    value={copete}
+                    handleOnChange={this.handleOnChange}
+                />
                 <br/>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Cuerpo</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
-                </div>
+                <InputElement
+                    label="Cuerpo"
+                    id="description"
+                    value={description}
+                    type="textarea"
+                    handleOnChange={this.handleOnChange}
+                />
                 <div>
                     <label>Imagen</label>
                     <Button 
@@ -44,39 +112,42 @@ class Article extends Component {
                          size="md"
                          color="success" 
                          onClick={this.handleOnAdd}
-                         icon=""
                     />
                 </div>          
                 <section>
-                    {this.state.imgItems.map(item => {
+                    {this.state.imgItems.map((item, index) => {
                         return (
-                            <InputElement />
+                            <InputElement id={`img_${index}`} key={`img_${index}`} />
                         );
                     })}
                 </section>
                 <div className="mt-3">
-                
                     <Button 
                         id="1"
                         text="Guardar"
                         type="submit"
                         size="md"
                         color="primary" 
-                        onClick = {this.handleOnSave}
+                        onClick = {this.handleOnSubmit}
                         icon=""
                     />
-                     <Button 
-                        id="1"
-                        text="Cancelar"
-                        type="submit"
-                        size="md"
-                        color="danger" 
-                        onClick = {this.handleOnCancel}
-                        icon=""
+                    <Button
+                    id="2"
+                    text="Cancelar"
+                    type="submit"
+                    size="md"
+                    color="danger" 
+                    onClick = {
+                        () => {
+                            if(window.confirm("está seguro?")) {
+                                window.location.href= "/articles";
+                            }
+                        }                        
+                    }                    
                     />
                 </div>
              </div>  
         )}
 }
 
-export default Article;
+export default withRouter(Article);

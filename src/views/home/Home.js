@@ -21,7 +21,7 @@ class Home extends Component {
         this.BuildCardsSecondary= this.BuildCardsSecondary.bind(this);
         this.timerID = setInterval(
             () => this.changeAside(),
-            2000
+            5000
           );
     }
 
@@ -68,17 +68,20 @@ class Home extends Component {
     BuildCardsPrimary() {
         return this.state.articlesCardPrimary.map(articleCard => {
 
-            const { id, title, copete, description, path, date, image } = articleCard;          
+            const { id, title, copete, description, path, date, image } = articleCard;  
+            const titleCard = title.substr(0, 100) + (title.length > 100 ? '...' : '');  
+            const subtitle = copete.substr(0, 200) + (copete.length > 200 ? '...' : '');      
             return (
                 <div key={id} className="col-12 col-md-6 d-none d-lg-block">
                     <Card
-                        title={title} 
-                        subTitle={copete}
+                        title={titleCard} 
+                        subTitle={subtitle}
                         cardLink={path}
                         date={date}
                         img={image}
                     />
                 </div>
+
             );
           });
     }
@@ -89,7 +92,7 @@ class Home extends Component {
             const { id, title, copete, description, path, date, image } = articleCard;
             const subtitle = copete.substr(0, 100) + (copete.length > 100 ? '...' : '');
             return (
-                <div className='col-12 col-md-3 col-lg-3' key={id}>
+                <div className='col-12 col-md-6 col-lg-3' key={id}>
                     <Card 
                         title={title} 
                         subTitle={subtitle}
@@ -137,7 +140,9 @@ class Home extends Component {
                 articlesAside,
                 index: indexAside
             });
+            $('.carousel').carousel('next');
         });
+        
     }
 
     render() {

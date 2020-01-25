@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React, { Component, createElement } from 'react';
+=======
+import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+>>>>>>> 9ecf608c1f1aa559d30c267277e7ec473f147279
 import ArticleItem from '../../components/articleItem/ArticleItem';
 import Button from '../../components/button/Button';
-import { get } from '../../utils/services';
+import { isLogged, get } from '../../utils/services';
 
 class Articles extends Component {
     
@@ -14,11 +19,15 @@ class Articles extends Component {
     }
 
     componentDidMount() {
-        get('http://localhost:3000/articles').then(articles => {
-        this.setState({
-            articles
-          });
-        });
+        if (!isLogged()) {
+            this.props.history.push('/');
+        } else {
+            get('http://localhost:3000/articles').then(articles => {
+                this.setState({
+                    articles
+                });
+            });
+        }
     }
 
     buildArticleItem() {
@@ -43,11 +52,10 @@ class Articles extends Component {
                         color="primary" 
                         onClick = {() => {console.log("Agregar")}}/>
                 </div>
-               
             </div>
         );
     }
 }
 
 
-export default Articles;
+export default withRouter(Articles);
