@@ -45,7 +45,7 @@ Aside.propTypes = {
     id : PropTypes.string,
     title : PropTypes.string,
     image : PropTypes.string,
-    path : PropTypes.string
+    path : PropTypes.string,
 };
 
 

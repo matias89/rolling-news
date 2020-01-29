@@ -5,6 +5,8 @@ import Button from '../../components/button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { get, createConection } from '../../utils/services';
 
+import './login.css';
+
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -52,7 +54,6 @@ class Login extends Component {
                     <div className="form-group">
                         <InputElement
                             value={this.state.userName}
-                            label="User"
                             placeholder="UserName"
                             type="text"
                             id="userName"
@@ -62,7 +63,6 @@ class Login extends Component {
                     <div className="form-group">
                         <InputElement
                             value={this.state.password}
-                            label="Password"
                             placeholder="Password"
                             type="password" 
                             id="password"

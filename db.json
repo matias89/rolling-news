@@ -169,15 +169,15 @@
   ],
   "users": [
     {
-      "userName": "Ramiro Gisone",
+      "userName": "ramiro.gisone",
       "password": "peliame"
     },
     {
-      "userName": "Alejandro Suarez",
+      "userName": "alejandro.suarez",
       "password": "12345"
     },
     {
-      "userName": "Luiz Cazullo",
+      "userName": "luis.cazzullo",
       "password": "1234"
     }
   ]

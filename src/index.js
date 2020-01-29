@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'; // ReactDOM.render
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // Views
 import Home from './views/home/Home';
 import Detail from './views/detail/Detail';
