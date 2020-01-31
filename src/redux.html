@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js" integrity="sha256-7nQo8jg3+LLQfXy/aqP5D6XtqDQRODTO18xBdHhQow4=" crossorigin="anonymous"></script>
+    <style>
+        input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <button id="decrement"> - </button>
+        <span id="value"></span>
+        <button id="increment"> + </button>
+    </section>
+    <script>
+    document.getElementById('decrement').addEventListener('click', e => {
+        store.dispatch(decrementAction(10));
+    });
+    document.getElementById('increment').addEventListener('click', e => {
+        store.dispatch(incrementAction(5));
+    });
+    // Actions
+    function incrementAction(value) {
+        return {
+            type: 'INCREMENT',
+            payload: {
+                incrementValue: value,
+            }
+        }
+    }
+    function decrementAction(value) {
+        return {
+            type: 'DECREMENT',
+            payload: {
+                decrementValue: value,
+            }
+        }
+    }
+    // Reducer
+    function counterReducer(state = 10, action) {
+        switch(action.type) {
+            case 'INCREMENT':
+                return state + action.payload.incrementValue;
+            case 'DECREMENT':
+                return state - action.payload.decrementValue;
+            default:
+                return state;
+        }
+    }
+    // Store
+    const store = Redux.createStore(counterReducer);
+
+    // View
+    const el = document.getElementById('value');
+    function render() {
+        el.innerText = store.getState().toString();
+    }
+    render();
+    store.subscribe(render);
+    </script>
+</body>
+</html>

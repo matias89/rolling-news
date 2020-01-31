@@ -3,6 +3,7 @@ import InputElement from '../../components/input/InputElement';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Aside from '../../components/aside/Aside';
 import Card from '../../components/card/Card';
+import Counter from '../../components/counter/Counter';
 import { get, post } from '../../utils/services';
 
 class Home extends Component {
@@ -147,6 +148,7 @@ class Home extends Component {
     render() {
         return (
             <div className='container'>
+                <Counter />
                 <hr />
                 <InputElement                    
                     type="search" 
