@@ -121,7 +121,7 @@ class Home extends Component {
             });
 
             articles.forEach((article, id) => {
-                articles[id].path = '/article/'+article.id;
+                articles[id].path = '/detail/'+article.id;
             });
 
             let indexAside;

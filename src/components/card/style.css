@@ -4,11 +4,13 @@
 
 .imgCard {
     background-color: rgb(255, 254, 254);
-    width: auto;
-    height: 200px;
+    width: 100%;
 }
 
 .CardNews {
-    height: 450px;
+    min-height: 450px;
     overflow: hidden;
+}
+.CardNews a {
+    color: initial;
 }

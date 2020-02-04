@@ -3,7 +3,7 @@ import Button from '../../components/button/Button';
 
 const ArticleItem = (props) => {
 
-    const {id, title, body} = props;    
+    const {id, title, body, onEdit } = props;    
     const ItemTitle = createElement('strong', {className: 'd-block text-gray-dark',  key:`ItemTitle-${id}`}, title);
     const ItemBody= createElement('p', {className: 'media-body pb-3 mb-0 small',  key:`ItemBody-${id}`}, body);
     const Item= createElement('div', {className: 'col-12 col-sm-8'}, [ItemTitle, ItemBody]);
@@ -19,15 +19,19 @@ const ArticleItem = (props) => {
                     text="Editar"
                     type="button"
                     color="primary" 
-                    onClick = {() => {console.log("Editar")}}/>    
+                    onClick = {onEdit}/>    
             </div>
             <div className='col-6 col-sm-2'>    
                 <Button 
                     id = {btnDeletetId}
                     text="Eliminar"
                     type="button"
-                    color="primary" 
-                    onClick = {() => {console.log("Eliminar")}}/>
+                    color="danger" 
+                    onClick = {() => {
+                        if (confirm('Realmente deseas eliminar este articulo?')) {
+
+                        }
+                    }}/>
             </div>
         </div>
         );
