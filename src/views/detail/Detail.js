@@ -31,18 +31,23 @@ class Detail extends Component {
             });
     }
     render() {
-        const { article: { title, copete, description, image, id } } = this.state;
+        //const { article: { title, copete, description, image, id } } = this.state;
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1>{title}</h1>
-                        <p>{copete}</p>
+                        <h1>{this.state.article.title}</h1>
+                        <p>{this.state.article.copete}</p>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-9">
-                        Carousel
+                        <Carrousel items={[
+                            {
+                                imgName: this.state.article.image,
+                                path: `detail/${this.state.article.id}`
+                            }
+                        ]} />
                     </div>
                     <div className="col-3">
                         <Aside items={this.state.articles} />
@@ -50,7 +55,7 @@ class Detail extends Component {
                 </div>
                 <div className="row">
                     <div className="col-9">
-                        {description}
+                        {this.state.article.description}
                     </div>
                 </div>
                 <div className="row">
