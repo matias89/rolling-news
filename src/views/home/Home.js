@@ -3,7 +3,8 @@ import InputElement from '../../components/input/InputElement';
 import Carrousel from '../../components/carrousel/Carrousel';
 import Aside from '../../components/aside/Aside';
 import Card from '../../components/card/Card';
-import { get, post } from '../../utils/services';
+import Spinner from '../../components/spinner/Spinner';
+import { get } from '../../utils/services';
 
 class Home extends Component {
 
@@ -15,7 +16,8 @@ class Home extends Component {
             articlesAside:[],
             articlesCardPrimary:[],
             articlesCardSecondary:[],
-            index:0
+            index:0,
+            showSpinner: false,
           };
         this.BuildCardsPrimary= this.BuildCardsPrimary.bind(this);
         this.BuildCardsSecondary= this.BuildCardsSecondary.bind(this);
@@ -26,6 +28,9 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        this.setState(() => ({
+            showSpinner: true,
+        }));
         get('http://localhost:3000/articles').then(articles => {
             articles.sort((a,b) => { 
                 if (a.id > b.id) {
@@ -55,13 +60,16 @@ class Home extends Component {
             const articlesCardPrimary = articles.slice(4, 6);
             const articlesCardSecondary = articles.slice(6);
 
-            this.setState({
-                articles,
-                articlesCarrousel,
-                articlesAside,
-                articlesCardPrimary,
-                articlesCardSecondary
-            });
+            window.setTimeout(() => {
+                this.setState({
+                    articles,
+                    articlesCarrousel,
+                    articlesAside,
+                    articlesCardPrimary,
+                    articlesCardSecondary,
+                    showSpinner: false,
+                });
+            }, 2000);
         });
     }
 
@@ -145,8 +153,10 @@ class Home extends Component {
     }
 
     render() {
+        const { showSpinner } = this.state;
         return (
             <div className='container'>
+                {showSpinner ? <Spinner /> : null}
                 <hr />
                 <InputElement                    
                     type="search" 

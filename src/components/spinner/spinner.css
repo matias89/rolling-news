@@ -1,5 +1,6 @@
 .spinnerbox {
-   background-color: rgba(14, 162, 170, 1);
+   color: red;
+   background-color: #000;
    opacity: 0.90;
    height: 100%;
    width: 100%;
@@ -11,4 +12,8 @@
    -o-transition: all 1s ease;
    transition: all 1s ease;
    z-index: 10000;
+}
+
+.spinner-border {
+   margin-top: 40%;
 }
