@@ -4,7 +4,6 @@ import { get } from '../../utils/services';
 
 // Components
 import Comment from '../../components/comment/Comment';
-import Carrousel from '../../components/carrousel/Carrousel';
 import Aside from '../../components/aside/Aside';
 
 class Detail extends Component {
@@ -31,7 +30,6 @@ class Detail extends Component {
             });
     }
     render() {
-        //const { article: { title, copete, description, image, id } } = this.state;
         return (
             <div className="container">
                 <div className="row">
@@ -42,15 +40,10 @@ class Detail extends Component {
                 </div>
                 <div className="row">
                     <div className="col-9">
-                        <Carrousel items={[
-                            {
-                                imgName: this.state.article.image,
-                                path: `detail/${this.state.article.id}`
-                            }
-                        ]} />
+                        <img src={this.state.article.image} className="img-fluid" />
                     </div>
                     <div className="col-3">
-                        <Aside items={this.state.articles} />
+                        <Aside items={this.state.articles.slice(0, 2)} />
                     </div>
                 </div>
                 <div className="row">
@@ -60,6 +53,8 @@ class Detail extends Component {
                 </div>
                 <div className="row">
                     <div className="col-12">
+                        <hr />
+                        <h5>Comentarios</h5>
                         <Comment />
                     </div>
                 </div>
